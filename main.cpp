@@ -1,87 +1,87 @@
-#include "point.h"
-#include "model.h"
-#include "defines.h"
+#define GL_SILENCE_DEPRECATION
+#include "frameModel/model.h"
 #include <iostream>
-#include <unistd.h>
-#include <curses.h>
-
+#include "GLUT/glut.h"
+#include "matrix/matrix.h"
 
 using namespace std;
 myModel m;
-int xRotation = 0;
-int yRotation = 0;
-int zRotation = 0;
 const int ROT = 9;
 
-void processNormalKeys(unsigned char key, int x, int y) {
-    printf("%d ", xRotation);
-    printf("%d ", yRotation);
-    printf("%d\n", zRotation);
-
-    switch(key) {
-        case 113:
-            zRotation+= ROT;
-            zRotation %= 360;
-            break;
-        case 101:
-            zRotation-= ROT;
-            zRotation %= 360;
-            break;
-        case 119:
-            xRotation+= ROT;
-            zRotation %= 360;
-            break;
-        case 115:
-            xRotation-= ROT;
-            zRotation %= 360;
-            break;
-        case 97:
-            yRotation+= ROT;
-            zRotation %= 360;
-            break;
-        case 100:
-            yRotation-= ROT;
-            zRotation %= 360;
-            break;
-        case 32:
-            xRotation = 0;
-            yRotation = 0;
-            zRotation = 0;
-    }
-
-}
-void display123()
-{
-    rotateEnd(&m);
-    rotateModelByX(&m, xRotation);
-    rotateModelByY(&m, yRotation);
-    rotateModelByZ(&m, zRotation);
-    modelDraw(&m);
-    //modelFullInfo(&m);
-    usleep(100000);
-    glutSwapBuffers();
-}
-
+void openglWidnowInit(int argc, char **argv);
+void display123();
 
 int main(int argc, char **argv)
 {
-    readModelFromFile(&m);
+    int a = modelInitFromFile(&m);
+    if (a != OK)
+    {
+        cout << "ERROR CORRUPTED, code: " << a;
+        return a;
+    }
+    openglWidnowInit(argc, argv);
+    return OK;
+}
 
+void processNormalKeys(unsigned char key, int x, int y) {
+    switch(key) {
+        case 119:
+            rotateModelByX(&m, ROT);
+            break;
+        case 115:
+            rotateModelByX(&m, -ROT);
+            break;
+        case 97:
+            rotateModelByY(&m, ROT);
+            break;
+        case 100:
+            rotateModelByY(&m, -ROT);
+            break;
+        case 61:
+            modelZoom(&m, 2);
+            modelFullInfo(&m);
+            break;
+        case 45:
+            modelZoom(&m, 0.5);
+            break;
+        case 111:
+            modelMove(&m, 0, 20, 0);
+            break;
+        case 107:
+            modelMove(&m, -20, 0, 0);
+            break;
+        case 108:
+            modelMove(&m, 0, -20, 0);
+            break;
+        case 59:
+            modelMove(&m, 20, 0, 0);
+            break;
+    }
+
+}
+
+void display123()
+{
+
+    modelDraw(&m);
+    glutSwapBuffers();
+}
+
+void openglWidnowInit(int argc, char **argv)
+{
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowSize(1920, 1080);
-    glutInitWindowPosition(100, 740);
-    glutCreateWindow("First window!");
+    glutInitWindowSize(400, 400);
+    glutCreateWindow("3d frame viewer");
 
     glClearColor(1.0, 1.0, 1.0, 1.0);
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(-200, 200, -200, 200, -200, 200);
+    glOrtho(-200.0, 200.0, -200.0, 200.0, -200.0, 200.0);
 
     glutDisplayFunc(display123);
     glutKeyboardFunc(processNormalKeys);
     glutIdleFunc(display123);
 
     glutMainLoop();
-    return OK;
 }
