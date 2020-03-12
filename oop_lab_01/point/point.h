@@ -1,17 +1,15 @@
 #ifndef OOP_LAB_01_POINT_H
 #define OOP_LAB_01_POINT_H
-#include <math.h>
-#include <GLUT/glut.h>
 
 struct myPoint
 {
-    int x;
-    int y;
-    int z;
+    double x;
+    double y;
+    double z;
 };
 
 // Задать точке point координаты x, y, z
-void initPoint(myPoint* point, int x, int y, int z);
+void initPoint(myPoint* point, double x, double y, double z);
 
 // Изменить координату x у точки point
 void setPointX(myPoint* point, int x);
@@ -22,11 +20,13 @@ void setPointY(myPoint* point, int y);
 // Изменить координату z у точки point
 void setPointZ(myPoint* point, int z);
 
-void rotatePointByX(myPoint* point, int angle);
+void rotatePointByX(myPoint* point, double angle);
 
-void rotatePointByY(myPoint* point, int angle);
+void rotatePointByY(myPoint* point, double angle);
 
-void rotatePointByZ(myPoint* point, int angle);
+void rotatePointByZ(myPoint* point, double angle);
 
-void draw_line(myPoint *a, myPoint *b);
+void pointMove(myPoint* point, double dx, double dy, double dz);
+
+void pointZoom(myPoint* pointToMove, myPoint* pointRegarding, double k);
 #endif //OOP_LAB_01_POINT_H

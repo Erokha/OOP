@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
+../point/point.h
+/Users/kymblc/CLionProjects/oop_lab_01/point/point.h
+
+/Users/kymblc/CLionProjects/oop_lab_01/point/point.h
+
+/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp
+modelRotation.h
+/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.h
+
+/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.h
+../frameModel/frameStructure.h
+/Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
+../point/point.h
+/Users/kymblc/CLionProjects/oop_lab_01/point/point.h
+
