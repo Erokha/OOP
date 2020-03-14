@@ -5,10 +5,9 @@
 #include "../point/point.h"
 
 
-int rotateModelByX(myModel* model, int angle);
+void rotateModelByX(myModel& model, int angle);
 
-int rotateModelByY(myModel* model, int angle);
+void rotateModelByY(myModel& model, int angle);
 
-//int rotateModelByZ(myModel* model, int angle);
 
 #endif //OOP_LAB_01_MODELROTATION_H

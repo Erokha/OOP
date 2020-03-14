@@ -8,5 +8,8 @@
 #define ERRORWHILEREADINGEDGES 4
 #define NOTENOUGHEDGES 5
 #define NOFREESPACE 6
+#define OUTOFEDGES 7
+#define NOMEMORY 8
+#define ROT 2
 
 #endif //OOP_LAB_01_DEFINES_H

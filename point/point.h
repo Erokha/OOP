@@ -8,19 +8,20 @@ struct myPoint
     double z;
 };
 
-// Задать точке point координаты x, y, z
-void initPoint(myPoint* point, double x, double y, double z);
+void initPoint(myPoint& point, double x, double y, double z);
 
-void copyPoint(myPoint* source, myPoint* dest);
+void rotatePointByX(myPoint& pointToRotate, myPoint& pointRegarding, double alpha);
 
-void rotatePointByX(myPoint* pointToRotate, myPoint* pointRegarding, double alpha);
+void rotatePointByY(myPoint& pointToRotate, myPoint& pointRegarding, double alpha);
 
-void rotatePointByY(myPoint* pointToRotate, myPoint* pointRegarding, double alpha);
+void pointMove(myPoint& point, double dx, double dy, double dz);
 
-void rotatePointByZ(myPoint* point, double angle);
+void pointZoom(myPoint& pointToMove, myPoint& pointRegarding, double k);
 
-void pointMove(myPoint* point, double dx, double dy, double dz);
+double getPointX(myPoint& point);
 
-void pointZoom(myPoint* pointToMove, myPoint* pointRegarding, double k);
+double getPointY(myPoint& point);
+
+double getPointZ(myPoint& point);
 
 #endif //OOP_LAB_01_POINT_H

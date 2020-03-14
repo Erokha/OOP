@@ -10,6 +10,7 @@ struct myModel
     myPoint center;
     myPoint* masOfPoints;
     matrix edges;
+    bool isInited;
 };
 
 #endif //OOP_LAB_01_FRAMESTRUCTURE_H
