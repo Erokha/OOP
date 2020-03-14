@@ -34,8 +34,8 @@ int modelfillPoints(FILE* f, myModel& model)
         }
 
         model.num_of_points = n;
-        model.masOfPoints = new myPoint[n];
-        if (model.masOfPoints == NULL)
+        model.masOfPointsOffset = new myPoint[n];
+        if (model.masOfPointsOffset == NULL)
         {
             return NOMEMORY;
         }
@@ -51,7 +51,7 @@ int modelfillPoints(FILE* f, myModel& model)
             {
                 ret = NOTENOUGHPOINTS;
             }
-            initPoint(model.masOfPoints[i], x, y, z);
+            initPoint(model.masOfPointsOffset[i], x, y, z);
         }
     }
     return ret;
@@ -87,27 +87,27 @@ int modelfillEdges(FILE* f, myModel& model)
 
 void modelGetCenter(myModel& model)
 {
-    double xmin = model.masOfPoints[0].x, xmax = model.masOfPoints[0].x;
-    double ymin = model.masOfPoints[0].y, ymax = model.masOfPoints[0].y;
-    double zmin = model.masOfPoints[0].z, zmax = model.masOfPoints[0].z;
+    double xmin = model.masOfPointsOffset[0].x, xmax = model.masOfPointsOffset[0].x;
+    double ymin = model.masOfPointsOffset[0].y, ymax = model.masOfPointsOffset[0].y;
+    double zmin = model.masOfPointsOffset[0].z, zmax = model.masOfPointsOffset[0].z;
     for(int i = 0; i < model.num_of_points; i++)
     {
-        if(model.masOfPoints[i].x > xmax) {
-            xmax = getPointX(model.masOfPoints[i]);
-        } else if(model.masOfPoints[i].x < xmin) {
-            xmin = getPointX(model.masOfPoints[i]);
+        if(model.masOfPointsOffset[i].x > xmax) {
+            xmax = getPointX(model.masOfPointsOffset[i]);
+        } else if(model.masOfPointsOffset[i].x < xmin) {
+            xmin = getPointX(model.masOfPointsOffset[i]);
         }
 
-        if(model.masOfPoints[i].y > ymax) {
-            ymax = getPointY(model.masOfPoints[i]);;
-        } else if(model.masOfPoints[i].x < ymin) {
-            ymin = getPointY(model.masOfPoints[i]);;
+        if(model.masOfPointsOffset[i].y > ymax) {
+            ymax = getPointY(model.masOfPointsOffset[i]);;
+        } else if(model.masOfPointsOffset[i].x < ymin) {
+            ymin = getPointY(model.masOfPointsOffset[i]);;
         }
 
-        if(model.masOfPoints[i].z > zmax) {
-            zmax = getPointZ(model.masOfPoints[i]);
-        } else if(model.masOfPoints[i].z < zmin) {
-            zmin = getPointZ(model.masOfPoints[i]);
+        if(model.masOfPointsOffset[i].z > zmax) {
+            zmax = getPointZ(model.masOfPointsOffset[i]);
+        } else if(model.masOfPointsOffset[i].z < zmin) {
+            zmin = getPointZ(model.masOfPointsOffset[i]);
         }
     }
     initPoint(model.center, ((xmax + xmin) / 2), ((zmax + zmin) / 2), ((zmax + zmin) / 2));
@@ -117,10 +117,10 @@ void modelReCalculatePoints(myModel& model)
 {
     for(int i = 0; i < model.num_of_points; i++)
     {
-        double newx = getPointX(model.masOfPoints[i]) - getPointX(model.center);
-        double newy = getPointY(model.masOfPoints[i]) - getPointY(model.center);
-        double newz = getPointZ(model.masOfPoints[i]) - getPointZ(model.center);
-        initPoint(model.masOfPoints[i], newx, newy, newz);
+        double newx = getPointX(model.masOfPointsOffset[i]) - getPointX(model.center);
+        double newy = getPointY(model.masOfPointsOffset[i]) - getPointY(model.center);
+        double newz = getPointZ(model.masOfPointsOffset[i]) - getPointZ(model.center);
+        initPoint(model.masOfPointsOffset[i], newx, newy, newz);
     }
 }
 
@@ -131,6 +131,6 @@ void modelMove(myModel& model, double dx, double dy, double dz)
 
 void freeMyMemory(myModel& model)
 {
-    delete model.masOfPoints;
+    delete model.masOfPointsOffset;
     freeMyMatrix(model.edges);
 }

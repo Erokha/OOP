@@ -10,6 +10,29 @@
 #define NOFREESPACE 6
 #define OUTOFEDGES 7
 #define NOMEMORY 8
-#define ROT 2
+#define myGLWIDTH 400
+#define myGLHEIGHT 400
+#define myGLCLEARCOLOR 1.0, 1.0, 1.0, 1.0
+#define myGLORTHO -200.0, 200.0, -200.0, 200.0, -200.0, 200.0
+
+
+const int ROT = 2;
+const int dMove = 20;
+
+enum myAction
+{
+    modelReadFromFile,
+    modelRotationXPositive,
+    modelRotationXNegative,
+    modelRotationYPositive,
+    modelRotationYNegative,
+    modelScalePositive,
+    modelScaleNegative,
+    modelMoveUp,
+    modelMoveDown,
+    modelMoveLeft,
+    modelMoveRight,
+    drawMe
+};
 
 #endif //OOP_LAB_01_DEFINES_H

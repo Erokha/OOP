@@ -6,11 +6,11 @@
 struct myModel
 {
     int num_of_points;
-    int num_of_edges;
     myPoint center;
-    myPoint* masOfPoints;
+    myPoint* masOfPointsOffset;
     matrix edges;
     bool isInited;
 };
+
 
 #endif //OOP_LAB_01_FRAMESTRUCTURE_H

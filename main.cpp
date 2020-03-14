@@ -6,6 +6,8 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    int res = taskManager(argc, argv);
-    return res;
+    myOpenglWidnowInit(argc, argv);
+    taskManager(modelReadFromFile);
+    GLmainLoop();
+    return OK;
 }

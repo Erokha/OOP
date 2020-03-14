@@ -44,3 +44,15 @@ int matrixSetElement(matrix& m, int data, int posi, int posj)
         return OK;
     }
 }
+
+int matrixGetElement(matrix &m, int posi, int posj)
+{
+    if ((posi > m.size) || (posj > m.size))
+    {
+        return OUTOFEDGES;
+    }
+    else
+    {
+        return m.mas[posi][posj];
+    }
+}

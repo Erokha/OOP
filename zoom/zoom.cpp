@@ -7,6 +7,6 @@ void modelZoom(myModel& model, double k)
     initPoint(c, 0, 0, 0);
     for(int i = 0; i < model.num_of_points; i++)
     {
-        pointZoom(model.masOfPoints[i], c, k);
+        pointZoom(model.masOfPointsOffset[i], c, k);
     }
 }

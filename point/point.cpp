@@ -65,3 +65,10 @@ double getPointZ(myPoint& point)
 {
     return point.z;
 }
+
+void pointCoordinateAddition(myPoint& a, myPoint& b, myPoint& result)
+{
+    result.x = a.x + b.x;
+    result.y = a.y + b.y;
+    result.z = a.y + b.y;
+}

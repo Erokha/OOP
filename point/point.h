@@ -8,6 +8,7 @@ struct myPoint
     double z;
 };
 
+
 void initPoint(myPoint& point, double x, double y, double z);
 
 void rotatePointByX(myPoint& pointToRotate, myPoint& pointRegarding, double alpha);
@@ -23,5 +24,7 @@ double getPointX(myPoint& point);
 double getPointY(myPoint& point);
 
 double getPointZ(myPoint& point);
+
+void pointCoordinateAddition(myPoint& a, myPoint& b, myPoint& result);
 
 #endif //OOP_LAB_01_POINT_H

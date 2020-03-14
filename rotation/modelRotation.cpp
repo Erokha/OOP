@@ -7,7 +7,7 @@ void rotateModelByX(myModel& model, int angle)
     initPoint(c, 0, 0, 0);
     for(int i = 0; i < model.num_of_points; i++)
     {
-        rotatePointByX(model.masOfPoints[i], c, angle);
+        rotatePointByX(model.masOfPointsOffset[i], c, angle);
     }
 }
 
@@ -17,7 +17,7 @@ void rotateModelByY(myModel& model, int angle)
     initPoint(c, 0, 0, 0);
     for(int i = 0; i < model.num_of_points; i++)
     {
-        rotatePointByY(model.masOfPoints[i], c, angle);
+        rotatePointByY(model.masOfPointsOffset[i], c, angle);
     }
 }
 
