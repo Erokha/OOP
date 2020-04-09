@@ -6,23 +6,18 @@
 #include "../zoom/zoom.h"
 
 
-int modelInitFromFile(myModel* model);
+int modelInitFromFile(myModel& model);
 
-void modelReCalculatePoints(myModel* model);
+void modelReCalculatePoints(myModel& model);
 
-int** createMatrix(int size);
+void modelGetCenter(myModel& model);
 
-int modelGetCenter(myModel* model);
+int modelfillEdges(FILE* f, myModel& model);
 
-int modelfillEdges(FILE* f, myModel* model);
+int modelfillPoints(FILE* f, myModel& model);
 
-int modelfillPoints(FILE* f, myModel* model);
+void modelMove(myModel& model, double dx, double dy, double dz);
 
-int modelDraw(myModel* model);
-
-void modelFullInfo(myModel* model);
-
-
-
+void freeMyMemory(myModel& model);
 
 #endif //OOP_LAB_01_MODEL_H

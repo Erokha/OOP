@@ -135,6 +135,45 @@ CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp -o CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s
 
+CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
+CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: ../matrix/matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp
+
+CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp > CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.i
+
+CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp -o CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.s
+
+CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
+CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../manager/myManager.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp
+
+CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp > CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.i
+
+CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp -o CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.s
+
+CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
+CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o: ../glutWindow/myGLUT.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp
+
+CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp > CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.i
+
+CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp -o CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.s
+
 # Object files for target oop_lab_01
 oop_lab_01_OBJECTS = \
 "CMakeFiles/oop_lab_01.dir/main.cpp.o" \
@@ -142,7 +181,10 @@ oop_lab_01_OBJECTS = \
 "CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o" \
-"CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o"
+"CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o" \
+"CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o" \
+"CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o" \
+"CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o"
 
 # External object files for target oop_lab_01
 oop_lab_01_EXTERNAL_OBJECTS =
@@ -153,9 +195,12 @@ oop_lab_01: CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o
+oop_lab_01: CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o
+oop_lab_01: CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o
+oop_lab_01: CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/build.make
 oop_lab_01: CMakeFiles/oop_lab_01.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable oop_lab_01"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking CXX executable oop_lab_01"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/oop_lab_01.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

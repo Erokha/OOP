@@ -83,6 +83,9 @@
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/defines.h">
 			<Option target="oop_lab_01"/>
 		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.cpp">
 			<Option target="oop_lab_01"/>
 		</Unit>
@@ -98,7 +101,25 @@
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h">
 			<Option target="oop_lab_01"/>
 		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/main.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h">
 			<Option target="oop_lab_01"/>
 		</Unit>
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/point/point.cpp">

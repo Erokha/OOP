@@ -177,6 +177,33 @@ frameModel/model.cpp.s:
 	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.s
 .PHONY : frameModel/model.cpp.s
 
+glutWindow/myGLUT.o: glutWindow/myGLUT.cpp.o
+
+.PHONY : glutWindow/myGLUT.o
+
+# target to build an object file
+glutWindow/myGLUT.cpp.o:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o
+.PHONY : glutWindow/myGLUT.cpp.o
+
+glutWindow/myGLUT.i: glutWindow/myGLUT.cpp.i
+
+.PHONY : glutWindow/myGLUT.i
+
+# target to preprocess a source file
+glutWindow/myGLUT.cpp.i:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.i
+.PHONY : glutWindow/myGLUT.cpp.i
+
+glutWindow/myGLUT.s: glutWindow/myGLUT.cpp.s
+
+.PHONY : glutWindow/myGLUT.s
+
+# target to generate assembly for a file
+glutWindow/myGLUT.cpp.s:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.s
+.PHONY : glutWindow/myGLUT.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -203,6 +230,60 @@ main.s: main.cpp.s
 main.cpp.s:
 	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/main.cpp.s
 .PHONY : main.cpp.s
+
+manager/myManager.o: manager/myManager.cpp.o
+
+.PHONY : manager/myManager.o
+
+# target to build an object file
+manager/myManager.cpp.o:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o
+.PHONY : manager/myManager.cpp.o
+
+manager/myManager.i: manager/myManager.cpp.i
+
+.PHONY : manager/myManager.i
+
+# target to preprocess a source file
+manager/myManager.cpp.i:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.i
+.PHONY : manager/myManager.cpp.i
+
+manager/myManager.s: manager/myManager.cpp.s
+
+.PHONY : manager/myManager.s
+
+# target to generate assembly for a file
+manager/myManager.cpp.s:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.s
+.PHONY : manager/myManager.cpp.s
+
+matrix/matrix.o: matrix/matrix.cpp.o
+
+.PHONY : matrix/matrix.o
+
+# target to build an object file
+matrix/matrix.cpp.o:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o
+.PHONY : matrix/matrix.cpp.o
+
+matrix/matrix.i: matrix/matrix.cpp.i
+
+.PHONY : matrix/matrix.i
+
+# target to preprocess a source file
+matrix/matrix.cpp.i:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.i
+.PHONY : matrix/matrix.cpp.i
+
+matrix/matrix.s: matrix/matrix.cpp.s
+
+.PHONY : matrix/matrix.s
+
+# target to generate assembly for a file
+matrix/matrix.cpp.s:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.s
+.PHONY : matrix/matrix.cpp.s
 
 point/point.o: point/point.cpp.o
 
@@ -300,9 +381,18 @@ help:
 	@echo "... frameModel/model.o"
 	@echo "... frameModel/model.i"
 	@echo "... frameModel/model.s"
+	@echo "... glutWindow/myGLUT.o"
+	@echo "... glutWindow/myGLUT.i"
+	@echo "... glutWindow/myGLUT.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"
+	@echo "... manager/myManager.o"
+	@echo "... manager/myManager.i"
+	@echo "... manager/myManager.s"
+	@echo "... matrix/matrix.o"
+	@echo "... matrix/matrix.i"
+	@echo "... matrix/matrix.s"
 	@echo "... point/point.o"
 	@echo "... point/point.i"
 	@echo "... point/point.s"
