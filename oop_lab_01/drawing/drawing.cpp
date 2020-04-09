@@ -31,14 +31,40 @@ void modelDraw(myModel &model)
     }
 }
 
-void drawThrowError()
+void drawThrowError(int error)
 {
-    std::cout << "Here will be error!" << std::endl;
+    switch(error)
+    {
+        case NOFILE:
+            std::cout << "No such file" << std::endl;
+            break;
+        case NOTENOUGHPOINTS:
+            std::cout << "Error, while reading points" << std::endl;
+            break;
+
+        case ERRORWHILEREADINGEDGES:
+            std::cout << "Error, while reading edges" << std::endl;
+            break;
+        case NOFREESPACE:
+            std::cout << "Memory could not be allocated" << std::endl;
+            break;
+        case OUTOFEDGES:
+            std::cout << "Somewhere we are out of edges" << std::endl;
+            break;
+        case modelNotInited:
+            std::cout << "Model not inited" << std::endl;
+            break;
+        default:
+            std::cout << "Unknown error" << std::endl;
+            break;
+
+    }
 }
 
 void processNormalKeys(unsigned char key, int x, int y) {
     myAction action;
-    switch(key) {
+    switch(key)
+    {
         case 'w':
             action = modelRotationXNegative;
             break;
@@ -76,6 +102,7 @@ void processNormalKeys(unsigned char key, int x, int y) {
             action = drawMe;
     }
     taskManager(action);
+    taskManager(drawMe);
 }
 
 void display123()

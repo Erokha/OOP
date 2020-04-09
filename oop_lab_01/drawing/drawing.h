@@ -12,7 +12,7 @@ void draw_line(myPoint& a, myPoint& b);
 
 void modelDraw(myModel &model);
 
-void drawThrowError();
+void drawThrowError(int errortype);
 
 void processNormalKeys(unsigned char key, int x, int y);
 

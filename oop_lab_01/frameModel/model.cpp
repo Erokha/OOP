@@ -3,21 +3,26 @@
 
 int modelInitFromFile(myModel& model)
 {
-    model.isInited = false;
-    FILE *f;
-    f = fopen("model.txt", "r");
+    myModel tmp;
+    modelBasicInit(tmp);
 
-    if (modelfillPoints(f, model) != OK)
+    FILE *f;
+    f = fopen(myFilename, "r");
+
+    if (modelfillPoints(f, tmp) != OK)
     {
         return ERRORWHILEREADINGPOINTS;
     }
-    if (modelfillEdges(f, model) != OK)
+    if (modelfillEdges(f, tmp) != OK)
     {
         return ERRORWHILEREADINGEDGES;
     }
-    modelGetCenter(model);
-    modelReCalculatePoints(model);
-    model.isInited = true;
+    modelGetCenter(tmp);
+    modelReCalculatePoints(tmp);
+    tmp.isInited = true;
+    freeMyMemory(model);
+    modelCopy(tmp, model);
+    freeMyMemory(tmp);
     return OK;
 }
 
@@ -37,11 +42,11 @@ int modelfillPoints(FILE* f, myModel& model)
         model.masOfPointsOffset = new myPoint[n];
         if (model.masOfPointsOffset == NULL)
         {
-            return NOMEMORY;
+            return NOFREESPACE;
         }
         if (createMatrix(model.edges, model.num_of_points) != OK)
         {
-            return NOMEMORY;
+            return NOFREESPACE;
         }
 
         for (int i = 0; i < n; i++)
@@ -135,4 +140,26 @@ void freeMyMemory(myModel& model)
     freeMyMatrix(model.edges);
     model.num_of_points = 0;
     model.isInited = false;
+}
+
+void modelCopy(myModel& source, myModel& dest)
+{
+    modelBasicInit(dest);
+    dest.isInited = source.isInited;
+    dest.num_of_points = source.num_of_points;
+    dest.center = source.center;
+    dest.masOfPointsOffset = new myPoint[dest.num_of_points];
+    for(int i = 0; i < dest.num_of_points; i++)
+    {
+        dest.masOfPointsOffset[i] = source.masOfPointsOffset[i];
+    }
+    copyMatrix(source.edges, dest.edges);
+}
+
+void modelBasicInit(myModel &model)
+{
+    model.num_of_points = 0;
+    model.isInited = false;
+    model.masOfPointsOffset = NULL;
+    createEmptyMatrix(model.edges);
 }

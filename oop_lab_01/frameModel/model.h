@@ -20,4 +20,8 @@ void modelMove(myModel& model, double dx, double dy, double dz);
 
 void freeMyMemory(myModel& model);
 
+void modelBasicInit(myModel &model);
+
+void modelCopy(myModel& source, myModel& dest);
+
 #endif //OOP_LAB_01_MODEL_H

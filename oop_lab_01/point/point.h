@@ -27,4 +27,5 @@ double getPointZ(myPoint& point);
 
 void pointCoordinateAddition(myPoint& a, myPoint& b, myPoint& result);
 
+
 #endif //OOP_LAB_01_POINT_H

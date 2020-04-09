@@ -10,10 +10,6 @@
 
 /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
 
-/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.cpp
-drawing.h
-/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
-
 /Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
 GLUT/glut.h
 /Users/kymblc/CLionProjects/oop_lab_01/drawing/GLUT/glut.h
@@ -32,12 +28,6 @@ colorsDefine.h
 ../matrix/matrix.h
 /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
 
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.cpp
-model.h
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h
-GLUT/glut.h
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/GLUT/glut.h
-
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h
 stdio.h
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/stdio.h
@@ -46,18 +36,10 @@ stdio.h
 ../zoom/zoom.h
 /Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.h
 
-/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp
-myGLUT.h
-/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
-
 /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
 ../defines.h
 /Users/kymblc/CLionProjects/oop_lab_01/defines.h
 ../manager/myManager.h
-/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/main.cpp
-manager/myManager.h
 /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp
@@ -80,41 +62,17 @@ GLUT/glut.h
 iostream
 -
 
-/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp
-matrix.h
-/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
-stdio.h
--
-
 /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
 ../defines.h
 /Users/kymblc/CLionProjects/oop_lab_01/defines.h
 
-/Users/kymblc/CLionProjects/oop_lab_01/point/point.cpp
-../point/point.h
 /Users/kymblc/CLionProjects/oop_lab_01/point/point.h
-math.h
-/Users/kymblc/CLionProjects/oop_lab_01/point/math.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/point/point.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp
-modelRotation.h
-/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.h
-stdio.h
--
 
 /Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.h
 ../frameModel/frameStructure.h
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
 ../point/point.h
 /Users/kymblc/CLionProjects/oop_lab_01/point/point.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp
-zoom.h
-/Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.h
-stdio.h
--
 
 /Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.h
 ../frameModel/frameStructure.h

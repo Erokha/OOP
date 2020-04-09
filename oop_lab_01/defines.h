@@ -11,8 +11,7 @@ enum myErrors
     NOTENOUGHEDGES,
     NOFREESPACE,
     OUTOFEDGES,
-    modelNotInited,
-    NOMEMORY
+    modelNotInited
 };
 
 #define myGLWIDTH 400
@@ -23,6 +22,7 @@ enum myErrors
 
 const int ROT = 6;
 const int dMove = 20;
+#define myFilename "model.txt"//const char* myFilename = "model.txt";
 
 enum myAction
 {

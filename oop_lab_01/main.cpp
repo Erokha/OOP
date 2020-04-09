@@ -8,6 +8,8 @@ int main(int argc, char **argv)
 {
     myOpenglWidnowInit(argc, argv);
     taskManager(modelReadFromFile);
+    taskManager(drawMe);
+
     GLmainLoop();
     return OK;
 }

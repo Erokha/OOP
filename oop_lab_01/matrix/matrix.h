@@ -17,4 +17,8 @@ int matrixSetElement(matrix& m, int data, int posi, int posj);
 
 int matrixGetElement(matrix &m, int posi, int posj);
 
+int createEmptyMatrix(matrix& m);
+
+int copyMatrix(matrix& source, matrix& dest);
+
 #endif //OOP_LAB_01_MATRIX_H

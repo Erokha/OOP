@@ -40,15 +40,16 @@ int taskManager(myAction action)
         case modelMoveRight:
             modelMove(mod, 20, 0, 0);
             break;
+        case drawMe:
+            modelDraw(mod);
+            break;
         case modelReadFromFile:
-            freeMyMemory(mod);
             int a = modelInitFromFile(mod);
             if (a != OK)
             {
-                drawThrowError();
+                drawThrowError(a);
             }
             break;
     }
-    modelDraw(mod);
     return OK;
 }
