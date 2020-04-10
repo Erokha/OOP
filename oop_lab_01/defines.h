@@ -18,10 +18,15 @@ enum myErrors
 #define myGLHEIGHT 400
 #define myGLCLEARCOLOR 1.0, 1.0, 1.0, 1.0
 #define myGLORTHO -200.0, 200.0, -200.0, 200.0, -200.0, 200.0
+#define moveUpConst 0, 20, 0
+#define moveDownConst 0, -20, 0
+#define moveLeftConst -20, 0, 0
+#define moveRightConst 20, 0, 0
 
 
 const int ROT = 6;
-const int dMove = 20;
+const double zoomConst = 2.0;
+const double outZoomConst = 0.5;
 #define myFilename "model.txt"//const char* myFilename = "model.txt";
 
 enum myAction

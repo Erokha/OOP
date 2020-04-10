@@ -23,22 +23,22 @@ int taskManager(myAction action)
             rotateModelByY(mod, -ROT);
             break;
         case modelScalePositive:
-            modelZoom(mod, 2);
+            modelZoom(mod, zoomConst);
             break;
         case modelScaleNegative:
-            modelZoom(mod, 0.5);
+            modelZoom(mod, outZoomConst);
             break;
         case modelMoveUp:
-            modelMove(mod, 0, 20, 0);
+            modelMove(mod, moveUpConst);
             break;
         case modelMoveLeft:
-            modelMove(mod, -20, 0, 0);
+            modelMove(mod, moveLeftConst);
             break;
         case modelMoveDown:
-            modelMove(mod, 0, -20, 0);
+            modelMove(mod, moveDownConst);
             break;
         case modelMoveRight:
-            modelMove(mod, 20, 0, 0);
+            modelMove(mod, moveRightConst);
             break;
         case drawMe:
             modelDraw(mod);
