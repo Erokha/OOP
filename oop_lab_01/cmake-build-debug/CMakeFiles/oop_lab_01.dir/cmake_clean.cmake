@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o"
   "CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o"
   "CMakeFiles/oop_lab_01.dir/point/point.cpp.o"
+  "CMakeFiles/oop_lab_01.dir/request/request.cpp.o"
   "CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o"
   "CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o"
   "oop_lab_01"

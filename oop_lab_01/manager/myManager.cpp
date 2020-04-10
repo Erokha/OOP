@@ -4,41 +4,20 @@
 
 using namespace std;
 
-int taskManager(myAction action)
+int taskManager(request req)
 {
     static myModel mod;
-    switch(action) {
+    switch(req.action) {
         default:
             std::cout << "Error!";
-        case modelRotationXPositive:
-            rotateModelByX(mod, ROT);
+        case modelRotation:
+            rotateModelbyAxis(mod, req.rotation, req.rotationAxis);
             break;
-        case modelRotationXNegative:
-            rotateModelByX(mod, -ROT);
+        case modelScale:
+            modelZoom(mod, req.zoom);
             break;
-        case modelRotationYPositive:
-            rotateModelByY(mod, ROT);
-            break;
-        case modelRotationYNegative:
-            rotateModelByY(mod, -ROT);
-            break;
-        case modelScalePositive:
-            modelZoom(mod, zoomConst);
-            break;
-        case modelScaleNegative:
-            modelZoom(mod, outZoomConst);
-            break;
-        case modelMoveUp:
-            modelMove(mod, moveUpConst);
-            break;
-        case modelMoveLeft:
-            modelMove(mod, moveLeftConst);
-            break;
-        case modelMoveDown:
-            modelMove(mod, moveDownConst);
-            break;
-        case modelMoveRight:
-            modelMove(mod, moveRightConst);
+        case modelMove:
+            modelMoveCenter(mod, req.dx, req.dy, req.dz);
             break;
         case drawMe:
             modelDraw(mod);

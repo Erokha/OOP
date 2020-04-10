@@ -6,9 +6,10 @@
 #include "../defines.h"
 #include "GLUT/glut.h"
 #include "../glutWindow/myGLUT.h"
+#include "../request/request.h"
 #include <iostream>
 
 
-int taskManager(myAction action);
+int taskManager(request req);
 
 #endif //OOP_LAB_01_MYMANAGER_H

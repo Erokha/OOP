@@ -312,6 +312,33 @@ point/point.cpp.s:
 	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/point/point.cpp.s
 .PHONY : point/point.cpp.s
 
+request/request.o: request/request.cpp.o
+
+.PHONY : request/request.o
+
+# target to build an object file
+request/request.cpp.o:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/request/request.cpp.o
+.PHONY : request/request.cpp.o
+
+request/request.i: request/request.cpp.i
+
+.PHONY : request/request.i
+
+# target to preprocess a source file
+request/request.cpp.i:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/request/request.cpp.i
+.PHONY : request/request.cpp.i
+
+request/request.s: request/request.cpp.s
+
+.PHONY : request/request.s
+
+# target to generate assembly for a file
+request/request.cpp.s:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/request/request.cpp.s
+.PHONY : request/request.cpp.s
+
 rotation/modelRotation.o: rotation/modelRotation.cpp.o
 
 .PHONY : rotation/modelRotation.o
@@ -396,6 +423,9 @@ help:
 	@echo "... point/point.o"
 	@echo "... point/point.i"
 	@echo "... point/point.s"
+	@echo "... request/request.o"
+	@echo "... request/request.i"
+	@echo "... request/request.s"
 	@echo "... rotation/modelRotation.o"
 	@echo "... rotation/modelRotation.i"
 	@echo "... rotation/modelRotation.s"

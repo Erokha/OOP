@@ -4,6 +4,9 @@
 #include "../frameModel/frameStructure.h"
 #include "../point/point.h"
 
+int rotateModelbyAxis(myModel& model, int angle, char axis);
+
+int rotateModelbyAxis(myModel& model, int angle, char axis);
 
 int rotateModelByX(myModel& model, int angle);
 

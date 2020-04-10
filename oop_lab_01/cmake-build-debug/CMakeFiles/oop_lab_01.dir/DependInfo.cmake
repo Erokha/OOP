@@ -11,6 +11,7 @@ set(CMAKE_DEPENDS_CHECK_CXX
   "/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp" "/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o"
   "/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp" "/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o"
   "/Users/kymblc/CLionProjects/oop_lab_01/point/point.cpp" "/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles/oop_lab_01.dir/point/point.cpp.o"
+  "/Users/kymblc/CLionProjects/oop_lab_01/request/request.cpp" "/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles/oop_lab_01.dir/request/request.cpp.o"
   "/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp" "/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o"
   "/Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp" "/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o"
   )

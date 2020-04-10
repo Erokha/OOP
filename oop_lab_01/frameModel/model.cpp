@@ -129,7 +129,7 @@ void modelReCalculatePoints(myModel& model)
     }
 }
 
-void modelMove(myModel& model, double dx, double dy, double dz)
+void modelMoveCenter(myModel& model, double dx, double dy, double dz)
 {
     pointMove(model.center, dx, dy, dz);
 }

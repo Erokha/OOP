@@ -7,8 +7,11 @@ using namespace std;
 int main(int argc, char **argv)
 {
     myOpenglWidnowInit(argc, argv);
-    taskManager(modelReadFromFile);
-    taskManager(drawMe);
+    request r{};
+    reqSetReadFromFile(r);
+    taskManager(r);
+    reqSetDrawMe(r);
+    taskManager(r);
 
     GLmainLoop();
     return OK;
