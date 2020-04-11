@@ -6,29 +6,27 @@ using namespace std;
 
 int taskManager(request req)
 {
-    static myModel mod;
+    static myModel mod = modelBasicInit();
+    myErrors error = OK;
     switch(req.action) {
-        default:
-            std::cout << "Error!";
         case modelRotation:
-            rotateModelbyAxis(mod, req.rotation, req.rotationAxis);
+            error = modelRotateByAxis(mod, req.rotDat);
             break;
         case modelScale:
-            modelZoom(mod, req.zoom);
+            error = modelZoom(mod, req.zoomDat);
             break;
         case modelMove:
-            modelMoveCenter(mod, req.dx, req.dy, req.dz);
+            error = modelMoveCenter(mod, req.movDat);
             break;
         case drawMe:
-            modelDraw(mod);
+            error = modelDraw(mod);
             break;
         case modelReadFromFile:
-            int a = modelInitFromFile(mod);
-            if (a != OK)
-            {
-                drawThrowError(a);
-            }
+            error  = modelInitFromFile(mod, req.fileDat);
+            break;
+        default:
+            error = NOTASK;
             break;
     }
-    return OK;
+    return error;
 }

@@ -22,6 +22,7 @@ CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../frameModel/model.cpp
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../frameModel/model.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../matrix/matrix.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../point/point.h
+CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../request/request.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../rotation/modelRotation.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../zoom/zoom.h
 
@@ -74,6 +75,7 @@ CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: ../defines.h
 CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: ../matrix/matrix.cpp
 CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: ../matrix/matrix.h
 
+CMakeFiles/oop_lab_01.dir/point/point.cpp.o: ../defines.h
 CMakeFiles/oop_lab_01.dir/point/point.cpp.o: ../point/point.cpp
 CMakeFiles/oop_lab_01.dir/point/point.cpp.o: ../point/point.h
 
@@ -85,6 +87,7 @@ CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../defines.h
 CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../frameModel/frameStructure.h
 CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../matrix/matrix.h
 CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../point/point.h
+CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../request/request.h
 CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../rotation/modelRotation.cpp
 CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../rotation/modelRotation.h
 
@@ -92,6 +95,7 @@ CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../defines.h
 CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../frameModel/frameStructure.h
 CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../matrix/matrix.h
 CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../point/point.h
+CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../request/request.h
 CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../zoom/zoom.cpp
 CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../zoom/zoom.h
 

@@ -1,15 +1,17 @@
 #define GL_SILENCE_DEPRECATION
 #include "manager/myManager.h"
 
+
 using namespace std;
 
 
 int main(int argc, char **argv)
 {
+
     myOpenglWidnowInit(argc, argv);
-    request r{};
-    reqSetReadFromFile(r);
-    taskManager(r);
+    request r;
+    //reqSetReadFromFile(r, fname);
+    //taskManager(r);
     reqSetDrawMe(r);
     taskManager(r);
 

@@ -1,7 +1,7 @@
 #include "drawing.h"
 
 
-void draw_line(myPoint& a, myPoint& b)
+myErrors draw_line(myPoint& a, myPoint& b)
 {
     glBegin(GL_LINES);
     glColor3f(GLmodelColor);
@@ -10,9 +10,10 @@ void draw_line(myPoint& a, myPoint& b)
     glEnd();
 }
 
-void modelDraw(myModel &model)
+myErrors modelDraw(myModel &model)
 {
-    glClear(GL_COLOR_BUFFER_BIT);
+    //glClear(GL_COLOR_BUFFER_BIT);
+    myErrors error;
     if (model.isInited)
     {
         for (int i = 0; i < model.num_of_points; i++) {
@@ -20,8 +21,14 @@ void modelDraw(myModel &model)
                 if (matrixGetElement(model.edges, i, j))
                 {
                     myPoint a, b;
-                    pointCoordinateAddition(model.masOfPointsOffset[i], model.center, a);
-                    pointCoordinateAddition(model.masOfPointsOffset[j], model.center, b);
+                    if (pointCoordinateAddition(a, model.masOfPointsOffset[i], model.center) != OK)
+                    {
+                        return POINTNOTINITED;
+                    }
+                    if (pointCoordinateAddition(b,model.masOfPointsOffset[j], model.center) != OK)
+                    {
+                        return POINTNOTINITED;
+                    }
                     draw_line(a, b);
                 }
             }
@@ -31,7 +38,7 @@ void modelDraw(myModel &model)
     }
 }
 
-void drawThrowError(int error)
+myErrors drawThrowError(int error)
 {
     switch(error)
     {

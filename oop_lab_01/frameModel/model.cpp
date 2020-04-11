@@ -1,118 +1,109 @@
 #include "model.h"
-#include "GLUT/glut.h"
 
-int modelInitFromFile(myModel& model)
+myErrors modelInitFromFile(myModel& model, fileData& fdat)
 {
-    myModel tmp;
-    modelBasicInit(tmp);
-
-    FILE *f;
-    f = fopen(myFilename, "r");
-
-    if (modelfillPoints(f, tmp) != OK)
+    FILE *f = fopen(fdat.filename, "r");
+    if (!f)
     {
-        return ERRORWHILEREADINGPOINTS;
+        return NOFILE;
     }
-    if (modelfillEdges(f, tmp) != OK)
+
+    myModel tmp = modelBasicInit();
+    myErrors error = modelfillPoints(f, tmp);
+    if (error == OK)
     {
-        return ERRORWHILEREADINGEDGES;
+        error = modelfillEdges(f, tmp);
     }
-    modelGetCenter(tmp);
-    modelReCalculatePoints(tmp);
-    tmp.isInited = true;
-    freeMyMemory(model);
-    modelCopy(tmp, model);
+    fclose(f);
+    if (error == OK)
+    {
+        modelGetCenter(tmp);
+        modelReCalculatePoints(tmp);
+
+        freeMyMemory(model);
+        modelCopy(model, tmp);
+        modelSetInited(model);
+    }
     freeMyMemory(tmp);
+    return error;
+}
+
+
+myErrors modelfillPoints(FILE* f, myModel& model)
+{
+    int n;
+    if (f != NULL)
+    {
+        if (readNumber(n, f) != OK)
+        {
+            return ERRORNUMOFPOINTS;
+        }
+        if (modeAllocateMasOfPointsOffset(model, n) != OK)
+        {
+            return NOFREESPACE;
+        }
+        if (readNPoints(model, n, f) != OK)
+        {
+            return ERRORWHILEREADINPOINTS;
+        }
+    }
     return OK;
 }
 
-int modelfillPoints(FILE* f, myModel& model)
+
+myErrors modelfillEdges(FILE* f, myModel& model)
 {
     int n;
-    int ret = NOFILE;
     if (f != NULL)
     {
-        ret = OK;
-        if (fscanf(f, "%d", &n) != 1)
+        if (readNumber(n, f) != OK)
         {
-            return NOTENOUGHPOINTS;
-        }
-
-        model.num_of_points = n;
-        model.masOfPointsOffset = new myPoint[n];
-        if (model.masOfPointsOffset == NULL)
-        {
-            return NOFREESPACE;
+            return ERRORNUMOFEDGES;
         }
         if (createMatrix(model.edges, model.num_of_points) != OK)
         {
             return NOFREESPACE;
         }
-
-        for (int i = 0; i < n; i++)
+        if (readNEdges(model, n, f) != OK)
         {
-            double x, y, z;
-            if (fscanf(f, "%lf %lf %lf", &x, &y, &z) != 3)
-            {
-                ret = NOTENOUGHPOINTS;
-            }
-            initPoint(model.masOfPointsOffset[i], x, y, z);
+            return ERRORWHILEREADINGEDGES;
         }
     }
-    return ret;
-}
-
-
-int modelfillEdges(FILE* f, myModel& model)
-{
-    int n;
-    int ret = NOFILE;
-    if (f != NULL)
-    {
-        ret = OK;
-        if (fscanf(f, "%d", &n) != 1)
-        {
-            ret = NOTENOUGHEDGES;
-        }
-        for (int i = 0; i < n; i++)
-        {
-            int a, b;
-            if (fscanf(f, "%d %d", &a, &b) != 2)
-            {
-                ret = NOTENOUGHEDGES;
-            }
-            matrixSetElement(model.edges, 1, a, b);
-            matrixSetElement(model.edges, 1, b, a);
-        }
-    }
-    fclose(f);
-    return ret;
+    return OK;
 }
 
 
 void modelGetCenter(myModel& model)
 {
-    double xmin = model.masOfPointsOffset[0].x, xmax = model.masOfPointsOffset[0].x;
-    double ymin = model.masOfPointsOffset[0].y, ymax = model.masOfPointsOffset[0].y;
-    double zmin = model.masOfPointsOffset[0].z, zmax = model.masOfPointsOffset[0].z;
+    double xmin = getPointX(model.masOfPointsOffset[0]);
+    double xmax = getPointX(model.masOfPointsOffset[0]);
+    double ymin = getPointY(model.masOfPointsOffset[0]);
+    double ymax = getPointY(model.masOfPointsOffset[0]);
+    double zmin = getPointZ(model.masOfPointsOffset[0]);
+    double zmax = getPointZ(model.masOfPointsOffset[0]);
+    double x, y, z;
     for(int i = 0; i < model.num_of_points; i++)
     {
-        if(model.masOfPointsOffset[i].x > xmax) {
-            xmax = getPointX(model.masOfPointsOffset[i]);
-        } else if(model.masOfPointsOffset[i].x < xmin) {
-            xmin = getPointX(model.masOfPointsOffset[i]);
+        x = getPointX(model.masOfPointsOffset[i]);
+        y = getPointY(model.masOfPointsOffset[i]);
+        z = getPointZ(model.masOfPointsOffset[i]);
+
+        if(x > xmax) {
+            xmax = x;
+        } else if(x < xmin) {
+            xmin = x;
         }
 
-        if(model.masOfPointsOffset[i].y > ymax) {
-            ymax = getPointY(model.masOfPointsOffset[i]);;
-        } else if(model.masOfPointsOffset[i].x < ymin) {
-            ymin = getPointY(model.masOfPointsOffset[i]);;
+        if (y > ymax) {
+            ymax = y;
+        } else if (y < ymin) {
+            ymin = y;
         }
 
-        if(model.masOfPointsOffset[i].z > zmax) {
-            zmax = getPointZ(model.masOfPointsOffset[i]);
-        } else if(model.masOfPointsOffset[i].z < zmin) {
-            zmin = getPointZ(model.masOfPointsOffset[i]);
+        if(z > zmax) {
+            zmax = z;
+        } else if(z < zmin) {
+            zmin = z;
         }
     }
     initPoint(model.center, ((xmax + xmin) / 2), ((zmax + zmin) / 2), ((zmax + zmin) / 2));
@@ -129,9 +120,14 @@ void modelReCalculatePoints(myModel& model)
     }
 }
 
-void modelMoveCenter(myModel& model, double dx, double dy, double dz)
+myErrors modelMoveCenter(myModel& model, moveData& movdat)
 {
-    pointMove(model.center, dx, dy, dz);
+    if (pointMove(model.center, movdat.dx, movdat.dy, movdat.dz) != OK)
+    {
+        return MOVERROR;
+    } else {
+        return OK;
+    }
 }
 
 void freeMyMemory(myModel& model)
@@ -142,9 +138,9 @@ void freeMyMemory(myModel& model)
     model.isInited = false;
 }
 
-void modelCopy(myModel& source, myModel& dest)
+void modelCopy(myModel& dest, myModel& source)
 {
-    modelBasicInit(dest);
+    dest = modelBasicInit();
     dest.isInited = source.isInited;
     dest.num_of_points = source.num_of_points;
     dest.center = source.center;
@@ -153,13 +149,97 @@ void modelCopy(myModel& source, myModel& dest)
     {
         dest.masOfPointsOffset[i] = source.masOfPointsOffset[i];
     }
-    copyMatrix(source.edges, dest.edges);
+    copyMatrix(dest.edges, source.edges);
 }
 
-void modelBasicInit(myModel &model)
+myModel modelBasicInit()
 {
+    myModel model;
     model.num_of_points = 0;
     model.isInited = false;
     model.masOfPointsOffset = NULL;
     createEmptyMatrix(model.edges);
+    return model;
 }
+
+int modelSetInited(myModel& model)
+{
+    model.isInited = true;
+}
+
+myErrors modeAllocateMasOfPointsOffset(myModel& model, int n)
+{
+    model.num_of_points = n;
+    model.masOfPointsOffset = new myPoint[n];
+    if (model.masOfPointsOffset == NULL)
+    {
+        return NOFREESPACE;
+    }
+    return OK;
+}
+
+myErrors readNPoints(myModel& model, int n, FILE* f)
+{
+    if (f != NULL)
+    {
+        if (n >= 0) {
+            for (int i = 0; i < n; i++)
+            {
+                double x, y, z;
+                if (fscanf(f, "%lf %lf %lf", &x, &y, &z) != 3)
+                {
+                    return POINTSERROR;
+                }
+                initPoint(model.masOfPointsOffset[i], x, y, z);
+            }
+        }
+    }
+    else
+    {
+        return NOFILE;
+    }
+}
+
+myErrors readNEdges(myModel& model, int n, FILE* f)
+{
+    if (f != NULL)
+    {
+        if (n >= 0) {
+            for (int i = 0; i < n; i++)
+            {
+                int a, b;
+                if (fscanf(f, "%d %d", &a, &b) != 2)
+                {
+                    return ERRORWHILEREADINGEDGES;
+                }
+                if (matrixSetElement(model.edges, 1, a, b) != OK)
+                {
+                    return OUTOFEDGES;
+                }
+            }
+        }
+    }
+    else
+    {
+        return NOFILE;
+    }
+}
+
+myErrors readNumber(int &num, FILE *f)
+{
+    myErrors error = OK;
+    if (!f)
+    {
+        error = NOFILE;
+    }
+    if (fscanf(f, "%d", &num) != 1)
+    {
+        error = FILEWRONGFORMAT;
+    }
+    if (num <= 0)
+    {
+        error = FILEWRONGFORMAT;
+    }
+    return error;
+}
+

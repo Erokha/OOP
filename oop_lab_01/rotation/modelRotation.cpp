@@ -1,25 +1,30 @@
 #include "modelRotation.h"
-#include <stdio.h>
 
 
 
-int rotateModelbyAxis(myModel& model, int angle, char axis)
+myErrors modelRotateByAxis(myModel& model, rotationData& rot)
 {
     if (model.isInited)
     {
         myPoint c;
         initPoint(c, 0, 0, 0);
-        if (axis == 'x')
+        if (rot.rotationAxis == 'x')
         {
             for (int i = 0; i < model.num_of_points; i++) {
-                rotatePointByX(model.masOfPointsOffset[i], c, angle);
+                rotatePointByX(model.masOfPointsOffset[i], c, rot.rotationAngle);
             }
+            return OK;
+        }
+        else if (rot.rotationAxis == 'y')
+        {
+            for (int i = 0; i < model.num_of_points; i++) {
+                rotatePointByY(model.masOfPointsOffset[i], c, rot.rotationAngle);
+            }
+            return OK;
         }
         else
         {
-            for (int i = 0; i < model.num_of_points; i++) {
-                rotatePointByY(model.masOfPointsOffset[i], c, angle);
-            }
+            return NOAXIS;
         }
     }
     else
@@ -28,19 +33,4 @@ int rotateModelbyAxis(myModel& model, int angle, char axis)
     }
 }
 
-int rotateModelByY(myModel& model, int angle)
-{
-    if (model.isInited)
-    {
-        myPoint c;
-        initPoint(c, 0, 0, 0);
-        for (int i = 0; i < model.num_of_points; i++) {
-            rotatePointByY(model.masOfPointsOffset[i], c, angle);
-        }
-    }
-    else
-    {
-        return modelNotInited;
-    }
-}
 

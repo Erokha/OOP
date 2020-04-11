@@ -35,7 +35,7 @@ void processNormalKeys(unsigned char key, int x, int y) {
             reqSetMove(req, dMovePos, dState, dState);
             break;
         case '`':
-            reqSetReadFromFile(req);
+            reqSetReadFromFile(req, fname);
             break;
         default:
             reqSetDrawMe(req);

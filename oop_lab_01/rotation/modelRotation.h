@@ -3,14 +3,8 @@
 
 #include "../frameModel/frameStructure.h"
 #include "../point/point.h"
+#include "../request/request.h"
 
-int rotateModelbyAxis(myModel& model, int angle, char axis);
-
-int rotateModelbyAxis(myModel& model, int angle, char axis);
-
-int rotateModelByX(myModel& model, int angle);
-
-int rotateModelByY(myModel& model, int angle);
-
+myErrors modelRotateByAxis(myModel& model, rotationData& rot);
 
 #endif //OOP_LAB_01_MODELROTATION_H

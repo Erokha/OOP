@@ -21,18 +21,16 @@ int createMatrix(matrix& m, int size)
     {
         m.size = 0;
         return NOFREESPACE;
-    }
-    for(int i = 0; i < size; i++)
-    {
-        m.mas[i] = new int[size];
-        if (m.mas[i] == NULL)
-        {
-            m.size = 0;
-            return NOFREESPACE;
-        }
-        for (int j = 0; j < size; j++)
-        {
-            m.mas[i][j] = 0;
+    } else {
+        for (int i = 0; i < size; i++) {
+            m.mas[i] = new int[size];
+            if (m.mas[i] == NULL) {
+                m.size = 0;
+                return NOFREESPACE;
+            }
+            for (int j = 0; j < size; j++) {
+                m.mas[i][j] = 0;
+            }
         }
     }
     return OK;
@@ -47,6 +45,7 @@ int matrixSetElement(matrix& m, int data, int posi, int posj)
     else
     {
         m.mas[posi][posj] = data;
+        m.mas[posj][posi] = data;
         return OK;
     }
 }
@@ -69,7 +68,7 @@ int createEmptyMatrix(matrix& m)
     m.mas = NULL;
 }
 
-int copyMatrix(matrix& source, matrix& dest)
+int copyMatrix(matrix& dest, matrix& source)
 {
     if (createMatrix(dest, source.size) == OK)
     {
@@ -78,6 +77,7 @@ int copyMatrix(matrix& source, matrix& dest)
                 dest.mas[i][j] = source.mas[i][j];
             }
         }
+        return OK;
     } else {
         return NOFREESPACE;
     }

@@ -2,25 +2,56 @@
 #define OOP_LAB_01_REQUEST_H
 #include "../defines.h"
 
-struct request
+struct rotationData
 {
-    myAction action;
+    char rotationAxis;
+    int rotationAngle;
+};
+
+struct moveData
+{
     int dx;
     int dy;
     int dz;
-    char rotationAxis;
-    int rotation;
+};
+
+struct zoomData
+{
     double zoom;
 };
 
-void reqSetRotation(request& r, int rotK, char axis);
+struct fileData
+{
+    const char* filename;
+};
 
-void reqSetZoom(request& r, double zoomK);
+struct request
+{
+    myAction action;
+    union {
+        rotationData rotDat;
+        moveData movDat;
+        zoomData zoomDat;
+        fileData fileDat;
+    };
+};
 
-void reqSetMove(request& r, int dx, int dy, int dz);
+myErrors reqSetRotation(request& r, int rotK, char axis);
 
-void reqSetDrawMe(request& r);
+myErrors reqSetZoom(request& r, double zoomK);
 
-void reqSetReadFromFile(request& r);
+myErrors reqSetMove(request& r, int dx, int dy, int dz);
+
+myErrors reqSetDrawMe(request& r);
+
+myErrors reqSetReadFromFile(request& r, char* filename);
+
+myErrors fileDatSetFilename(fileData& fdat, char* filename);
+
+myErrors movDatSetD(moveData& mdat, int dx, int dy, int dz);
+
+myErrors zoomDatSet(zoomData& zdat, double zoom);
+
+myErrors rotDatSet(rotationData& rdat, char axis, int rotK);
 
 #endif //OOP_LAB_01_REQUEST_H

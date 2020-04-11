@@ -9,11 +9,11 @@
 #include "../request/request.h"
 
 
-void draw_line(myPoint& a, myPoint& b);
+myErrors draw_line(myPoint& a, myPoint& b);
 
-void modelDraw(myModel &model);
+myErrors modelDraw(myModel &model);
 
-void drawThrowError(int errortype);
+myErrors drawThrowError(int errortype);
 
 
 #endif //OOP_LAB_01_DRAWING_H

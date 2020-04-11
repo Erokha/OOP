@@ -1,30 +1,60 @@
 #include "request.h"
 
-void reqSetRotation(request& r, int rotK, char axis)
+myErrors reqSetRotation(request& r, int rotK, char axis)
 {
     r.action = modelRotation;
-    r.rotationAxis = axis;
-    r.rotation = rotK;
+    rotDatSet(r.rotDat, axis, rotK);
+    return OK;
 }
 
-void reqSetZoom(request& r, double zoomK)
+myErrors reqSetZoom(request& r, double zoomK)
 {
     r.action = modelScale;
-    r.zoom = zoomK;
+    zoomDatSet(r.zoomDat, zoomK);
+    return OK;
 }
 
-void reqSetMove(request& r, int dx, int dy, int dz)
+myErrors reqSetMove(request& r, int dx, int dy, int dz)
 {
     r.action = modelMove;
-    r.dx = dx;
-    r.dy = dy;
-    r.dz = dz;
+    movDatSetD(r.movDat, dx, dy, dz);
+    return OK;
 }
-void reqSetDrawMe(request& r)
+myErrors reqSetDrawMe(request& r)
 {
     r.action = drawMe;
+    return OK;
 }
-void reqSetReadFromFile(request& r)
+myErrors reqSetReadFromFile(request& r, char* filename)
 {
     r.action = modelReadFromFile;
+    fileDatSetFilename(r.fileDat, filename);
 }
+
+myErrors fileDatSetFilename(fileData& fdat, char* filename)
+{
+    fdat.filename = filename;
+    return OK;
+}
+
+myErrors movDatSetD(moveData& mdat, int dx, int dy, int dz)
+{
+    mdat.dx = dx;
+    mdat.dy = dy;
+    mdat.dz = dz;
+    return OK;
+}
+
+myErrors zoomDatSet(zoomData& zdat, double zoom)
+{
+    zdat.zoom = zoom;
+    return OK;
+}
+
+myErrors rotDatSet(rotationData& rdat, char axis, int rotK)
+{
+    rdat.rotationAxis = axis;
+    rdat.rotationAngle = rotK;
+    return OK;
+}
+

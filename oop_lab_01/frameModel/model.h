@@ -6,22 +6,32 @@
 #include "../zoom/zoom.h"
 
 
-int modelInitFromFile(myModel& model);
+myErrors modelInitFromFile(myModel& model, fileData& fdat);
 
 void modelReCalculatePoints(myModel& model);
 
 void modelGetCenter(myModel& model);
 
-int modelfillEdges(FILE* f, myModel& model);
+myErrors modelfillEdges(FILE* f, myModel& model);
 
-int modelfillPoints(FILE* f, myModel& model);
+myErrors modelfillPoints(FILE* f, myModel& model);
 
-void modelMoveCenter(myModel& model, double dx, double dy, double dz);
+myErrors modelMoveCenter(myModel& model, moveData& movdat);
 
 void freeMyMemory(myModel& model);
 
-void modelBasicInit(myModel &model);
+myModel modelBasicInit();
 
 void modelCopy(myModel& source, myModel& dest);
+
+int modelSetInited(myModel& model);
+
+myErrors readNumber(int &num, FILE *f);
+
+myErrors modeAllocateMasOfPointsOffset(myModel& model, int n);
+
+myErrors readNPoints(myModel& model, int n, FILE* f);
+
+myErrors readNEdges(myModel& model, int n, FILE* f);
 
 #endif //OOP_LAB_01_MODEL_H

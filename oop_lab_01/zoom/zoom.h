@@ -2,7 +2,8 @@
 #define OOP_LAB_01_ZOOM_H
 #include "../frameModel/frameStructure.h"
 #include "../point/point.h"
+#include "../request/request.h"
 
-void modelZoom(myModel& model, double k);
+myErrors modelZoom(myModel& model, zoomData zdat);
 
 #endif //OOP_LAB_01_ZOOM_H
