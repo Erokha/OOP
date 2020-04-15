@@ -2,8 +2,10 @@
 #define OOP_LAB_01_MODEL_H
 
 #include "stdio.h"
-#include "../rotation/modelRotation.h"
-#include "../zoom/zoom.h"
+#include "frameStructure.h"
+#include "../request/request.h"
+#include "modelRotation.h"
+#include "zoom.h"
 
 
 myErrors modelInitFromFile(myModel& model, fileData& fdat);

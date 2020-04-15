@@ -1,10 +1,9 @@
 #include "myManager.h"
-#include <iostream>
 
 
 using namespace std;
 
-int taskManager(request req)
+myErrors taskManager(request& req)
 {
     static myModel mod = modelBasicInit();
     myErrors error = OK;

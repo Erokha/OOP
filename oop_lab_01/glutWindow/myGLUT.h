@@ -2,8 +2,10 @@
 #define OOP_LAB_01_MYGLUT_H
 
 #include "glutDefines.h"
-#include "../defines.h"
 #include "../manager/myManager.h"
+#include "GLUT/glut.h"
+
+
 
 void processNormalKeys(unsigned char key, int x, int y);
 

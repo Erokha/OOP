@@ -9,16 +9,16 @@ struct matrix
     int size;
 };
 
-void freeMyMatrix(matrix& m);
+myErrors freeMyMatrix(matrix& m);
 
-int createMatrix(matrix& m, int size);
+myErrors createMatrix(matrix& m, int size);
 
-int matrixSetElement(matrix& m, int data, int posi, int posj);
+myErrors matrixSetElement(matrix& m, int data, int posi, int posj);
 
 int matrixGetElement(matrix &m, int posi, int posj);
 
-int createEmptyMatrix(matrix& m);
+myErrors createEmptyMatrix(matrix& m);
 
-int copyMatrix(matrix& source, matrix& dest);
+myErrors copyMatrix(matrix& source, matrix& dest);
 
 #endif //OOP_LAB_01_MATRIX_H

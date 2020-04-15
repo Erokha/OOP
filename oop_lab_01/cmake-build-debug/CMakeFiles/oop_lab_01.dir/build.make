@@ -96,18 +96,18 @@ CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.cpp -o CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.s
 
-CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
-CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o: ../rotation/modelRotation.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp
+CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
+CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../frameModel/modelRotation.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp
 
-CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp > CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.i
+CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp > CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.i
 
-CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp -o CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.s
+CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp -o CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.s
 
 CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
 CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../drawing/drawing.cpp
@@ -122,18 +122,18 @@ CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.s"
 	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.cpp -o CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.s
 
-CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
-CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o: ../zoom/zoom.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o"
-	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp
+CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
+CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: ../frameModel/zoom.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o"
+	/Library/Developer/CommandLineTools/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o -c /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp
 
-CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.i"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp > CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.i
+CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.i"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp > CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.i
 
-CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s"
-	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp -o CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s
+CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.s"
+	/Library/Developer/CommandLineTools/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp -o CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.s
 
 CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: CMakeFiles/oop_lab_01.dir/flags.make
 CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o: ../matrix/matrix.cpp
@@ -192,9 +192,9 @@ oop_lab_01_OBJECTS = \
 "CMakeFiles/oop_lab_01.dir/main.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/point/point.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o" \
-"CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o" \
+"CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o" \
-"CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o" \
+"CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o" \
 "CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o" \
@@ -206,9 +206,9 @@ oop_lab_01_EXTERNAL_OBJECTS =
 oop_lab_01: CMakeFiles/oop_lab_01.dir/main.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/point/point.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o
-oop_lab_01: CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o
+oop_lab_01: CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o
-oop_lab_01: CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o
+oop_lab_01: CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/matrix/matrix.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o
 oop_lab_01: CMakeFiles/oop_lab_01.dir/glutWindow/myGLUT.cpp.o

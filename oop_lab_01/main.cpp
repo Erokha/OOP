@@ -10,8 +10,8 @@ int main(int argc, char **argv)
 
     myOpenglWidnowInit(argc, argv);
     request r;
-    //reqSetReadFromFile(r, fname);
-    //taskManager(r);
+    reqSetReadFromFile(r, fname);
+    taskManager(r);
     reqSetDrawMe(r);
     taskManager(r);
 

@@ -1,5 +1,6 @@
 #include "myGLUT.h"
 
+
 void processNormalKeys(unsigned char key, int x, int y) {
     request req{};
     switch(key)
@@ -45,12 +46,7 @@ void processNormalKeys(unsigned char key, int x, int y) {
     taskManager(req);
 }
 
-void display123()
-{
-
-    //taskManager(drawMe);
-//    glutSwapBuffers();
-}
+void display123(){}
 
 
 void myOpenglWidnowInit(int argc, char **argv)

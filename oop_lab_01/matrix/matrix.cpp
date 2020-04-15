@@ -1,7 +1,7 @@
 #include "matrix.h"
 #include <stdio.h>
 
-void freeMyMatrix(matrix& m)
+myErrors freeMyMatrix(matrix& m)
 {
     for (int i = 0; i < m.size; i++)
     {
@@ -12,8 +12,9 @@ void freeMyMatrix(matrix& m)
     }
     m.size = 0;
     delete m.mas;
+    return OK;
 }
-int createMatrix(matrix& m, int size)
+myErrors createMatrix(matrix& m, int size)
 {
     m.size = size;
     m.mas = new int*[size];
@@ -36,7 +37,7 @@ int createMatrix(matrix& m, int size)
     return OK;
 }
 
-int matrixSetElement(matrix& m, int data, int posi, int posj)
+myErrors matrixSetElement(matrix& m, int data, int posi, int posj)
 {
     if (((posi >= m.size) || (posj >= m.size)) || (posi < 0) || (posj < 0))
     {
@@ -62,13 +63,13 @@ int matrixGetElement(matrix &m, int posi, int posj)
     }
 }
 
-int createEmptyMatrix(matrix& m)
+myErrors createEmptyMatrix(matrix& m)
 {
     m.size = 0;
     m.mas = NULL;
 }
 
-int copyMatrix(matrix& dest, matrix& source)
+myErrors copyMatrix(matrix& dest, matrix& source)
 {
     if (createMatrix(dest, source.size) == OK)
     {

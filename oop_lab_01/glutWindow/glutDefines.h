@@ -5,6 +5,7 @@
 #define myGLHEIGHT 400
 #define myGLCLEARCOLOR 1.0, 1.0, 1.0, 1.0
 #define myGLORTHO -200.0, 200.0, -200.0, 200.0, -200.0, 200.0
+#define fname "model.txt"
 
 
 const int ROT = 6;
@@ -17,7 +18,7 @@ const char yAxis = 'y';
 const int dMovePos = 20;
 const int dMoveNeg = -20;
 const int dState = 0;
-char* fname = "model.txt";
+
 
 
 #endif //OOP_LAB_01_GLUTDEFINES_H

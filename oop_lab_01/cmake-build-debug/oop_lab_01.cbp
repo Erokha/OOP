@@ -101,6 +101,18 @@
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h">
 			<Option target="oop_lab_01"/>
 		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/glutDefines.h">
 			<Option target="oop_lab_01"/>
 		</Unit>
@@ -135,18 +147,6 @@
 			<Option target="oop_lab_01"/>
 		</Unit>
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/request/request.h">
-			<Option target="oop_lab_01"/>
-		</Unit>
-		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.cpp">
-			<Option target="oop_lab_01"/>
-		</Unit>
-		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/rotation/modelRotation.h">
-			<Option target="oop_lab_01"/>
-		</Unit>
-		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.cpp">
-			<Option target="oop_lab_01"/>
-		</Unit>
-		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/zoom/zoom.h">
 			<Option target="oop_lab_01"/>
 		</Unit>
 		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/CMakeLists.txt">

@@ -177,6 +177,60 @@ frameModel/model.cpp.s:
 	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.s
 .PHONY : frameModel/model.cpp.s
 
+frameModel/modelRotation.o: frameModel/modelRotation.cpp.o
+
+.PHONY : frameModel/modelRotation.o
+
+# target to build an object file
+frameModel/modelRotation.cpp.o:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o
+.PHONY : frameModel/modelRotation.cpp.o
+
+frameModel/modelRotation.i: frameModel/modelRotation.cpp.i
+
+.PHONY : frameModel/modelRotation.i
+
+# target to preprocess a source file
+frameModel/modelRotation.cpp.i:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.i
+.PHONY : frameModel/modelRotation.cpp.i
+
+frameModel/modelRotation.s: frameModel/modelRotation.cpp.s
+
+.PHONY : frameModel/modelRotation.s
+
+# target to generate assembly for a file
+frameModel/modelRotation.cpp.s:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.s
+.PHONY : frameModel/modelRotation.cpp.s
+
+frameModel/zoom.o: frameModel/zoom.cpp.o
+
+.PHONY : frameModel/zoom.o
+
+# target to build an object file
+frameModel/zoom.cpp.o:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o
+.PHONY : frameModel/zoom.cpp.o
+
+frameModel/zoom.i: frameModel/zoom.cpp.i
+
+.PHONY : frameModel/zoom.i
+
+# target to preprocess a source file
+frameModel/zoom.cpp.i:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.i
+.PHONY : frameModel/zoom.cpp.i
+
+frameModel/zoom.s: frameModel/zoom.cpp.s
+
+.PHONY : frameModel/zoom.s
+
+# target to generate assembly for a file
+frameModel/zoom.cpp.s:
+	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.s
+.PHONY : frameModel/zoom.cpp.s
+
 glutWindow/myGLUT.o: glutWindow/myGLUT.cpp.o
 
 .PHONY : glutWindow/myGLUT.o
@@ -339,60 +393,6 @@ request/request.cpp.s:
 	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/request/request.cpp.s
 .PHONY : request/request.cpp.s
 
-rotation/modelRotation.o: rotation/modelRotation.cpp.o
-
-.PHONY : rotation/modelRotation.o
-
-# target to build an object file
-rotation/modelRotation.cpp.o:
-	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.o
-.PHONY : rotation/modelRotation.cpp.o
-
-rotation/modelRotation.i: rotation/modelRotation.cpp.i
-
-.PHONY : rotation/modelRotation.i
-
-# target to preprocess a source file
-rotation/modelRotation.cpp.i:
-	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.i
-.PHONY : rotation/modelRotation.cpp.i
-
-rotation/modelRotation.s: rotation/modelRotation.cpp.s
-
-.PHONY : rotation/modelRotation.s
-
-# target to generate assembly for a file
-rotation/modelRotation.cpp.s:
-	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/rotation/modelRotation.cpp.s
-.PHONY : rotation/modelRotation.cpp.s
-
-zoom/zoom.o: zoom/zoom.cpp.o
-
-.PHONY : zoom/zoom.o
-
-# target to build an object file
-zoom/zoom.cpp.o:
-	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.o
-.PHONY : zoom/zoom.cpp.o
-
-zoom/zoom.i: zoom/zoom.cpp.i
-
-.PHONY : zoom/zoom.i
-
-# target to preprocess a source file
-zoom/zoom.cpp.i:
-	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.i
-.PHONY : zoom/zoom.cpp.i
-
-zoom/zoom.s: zoom/zoom.cpp.s
-
-.PHONY : zoom/zoom.s
-
-# target to generate assembly for a file
-zoom/zoom.cpp.s:
-	$(MAKE) -f CMakeFiles/oop_lab_01.dir/build.make CMakeFiles/oop_lab_01.dir/zoom/zoom.cpp.s
-.PHONY : zoom/zoom.cpp.s
-
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -408,6 +408,12 @@ help:
 	@echo "... frameModel/model.o"
 	@echo "... frameModel/model.i"
 	@echo "... frameModel/model.s"
+	@echo "... frameModel/modelRotation.o"
+	@echo "... frameModel/modelRotation.i"
+	@echo "... frameModel/modelRotation.s"
+	@echo "... frameModel/zoom.o"
+	@echo "... frameModel/zoom.i"
+	@echo "... frameModel/zoom.s"
 	@echo "... glutWindow/myGLUT.o"
 	@echo "... glutWindow/myGLUT.i"
 	@echo "... glutWindow/myGLUT.s"
@@ -426,12 +432,6 @@ help:
 	@echo "... request/request.o"
 	@echo "... request/request.i"
 	@echo "... request/request.s"
-	@echo "... rotation/modelRotation.o"
-	@echo "... rotation/modelRotation.i"
-	@echo "... rotation/modelRotation.s"
-	@echo "... zoom/zoom.o"
-	@echo "... zoom/zoom.i"
-	@echo "... zoom/zoom.s"
 .PHONY : help
 
 

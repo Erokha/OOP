@@ -12,7 +12,7 @@ myErrors draw_line(myPoint& a, myPoint& b)
 
 myErrors modelDraw(myModel &model)
 {
-    //glClear(GL_COLOR_BUFFER_BIT);
+    glClear(GL_COLOR_BUFFER_BIT);
     myErrors error;
     if (model.isInited)
     {
