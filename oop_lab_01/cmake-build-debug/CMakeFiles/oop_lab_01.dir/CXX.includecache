@@ -12,17 +12,11 @@ string
 
 /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
 
-/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.cpp
-drawing.h
-/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
-
 /Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
 iostream
 -
-../glutWindow/myGLUT.h
-/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
-../frameModel/frameStructure.h
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
+../point/point.h
+/Users/kymblc/CLionProjects/oop_lab_01/point/point.h
 colorsDefine.h
 /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
 
@@ -47,22 +41,14 @@ modelRotation.h
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h
 zoom.h
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp
-modelRotation.h
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h
+../drawing/drawing.h
+/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h
 frameStructure.h
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
 ../request/request.h
 /Users/kymblc/CLionProjects/oop_lab_01/request/request.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp
-zoom.h
-/Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h
-stdio.h
--
 
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h
 frameStructure.h
@@ -71,10 +57,14 @@ frameStructure.h
 /Users/kymblc/CLionProjects/oop_lab_01/request/request.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/glutDefines.h
+../drawing/colorsDefine.h
+/Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp
 myGLUT.h
 /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
+../drawing/colorsDefine.h
+/Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
 glutDefines.h
@@ -85,25 +75,13 @@ GLUT/glut.h
 /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/GLUT/glut.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/main.cpp
-manager/myManager.h
-/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
-
-/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp
-myManager.h
-/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
+glutWindow/myGLUT.h
+/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
 
 /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
 ../frameModel/model.h
 /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h
-../drawing/drawing.h
-/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
 iostream
--
-
-/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp
-matrix.h
-/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
-stdio.h
 -
 
 /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
@@ -117,4 +95,6 @@ stdio.h
 /Users/kymblc/CLionProjects/oop_lab_01/request/request.h
 ../defines.h
 /Users/kymblc/CLionProjects/oop_lab_01/defines.h
+../drawing/colorsDefine.h
+/Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
 

@@ -1,21 +1,23 @@
 #include "myGLUT.h"
+#include "../drawing/colorsDefine.h"
 
 
 void processNormalKeys(unsigned char key, int x, int y) {
     request req{};
+    myColor color = defaultModelColor;
     switch(key)
     {
         case 'w':
-            reqSetRotation(req, ROT, xAxis);
+            reqSetRotation(req, ROTANG, xAxis);
             break;
         case 's':
-            reqSetRotation(req, -ROT, xAxis);
+            reqSetRotation(req, -ROTANG, xAxis);
             break;
         case 'a':
-            reqSetRotation(req, ROT, yAxis);
+            reqSetRotation(req, ROTANG, yAxis);
             break;
         case 'd':
-            reqSetRotation(req, -ROT, yAxis);
+            reqSetRotation(req, -ROTANG, yAxis);
             break;
         case '=':
             reqSetZoom(req, zoomConst);
@@ -36,13 +38,13 @@ void processNormalKeys(unsigned char key, int x, int y) {
             reqSetMove(req, dMovePos, dState, dState);
             break;
         case '`':
-            reqSetReadFromFile(req, fname);
+            reqSetReadFromFile(req, "model.txt");
             break;
         default:
-            reqSetDrawMe(req);
+            reqSetDrawMe(req, color);
     }
     taskManager(req);
-    reqSetDrawMe(req);
+    reqSetDrawMe(req, color);
     taskManager(req);
 }
 
@@ -57,15 +59,22 @@ void myOpenglWidnowInit(int argc, char **argv)
     glutCreateWindow("3d frame viewer");
 
 
-
-    glClearColor(myGLCLEARCOLOR);
+    glClearColor(clear.r, clear.g, clear.b, clear.a);
+    myColor color = defaultModelColor;
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
-    glOrtho(myGLORTHO);
+    glOrtho(GLYFROM, GLYTO, GLXFROM, GLXTO, GLZFROM, GLZTO);
 
     glutDisplayFunc(display123);
     glutKeyboardFunc(processNormalKeys);
     glutIdleFunc(display123);
+
+
+    request r{};
+    reqSetReadFromFile(r, argv[1]);
+    taskManager(r);
+    reqSetDrawMe(r, color);
+    taskManager(r);
 }
 
 

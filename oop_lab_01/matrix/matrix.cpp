@@ -1,5 +1,4 @@
 #include "matrix.h"
-#include <stdio.h>
 
 myErrors freeMyMatrix(matrix& m)
 {

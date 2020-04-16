@@ -9,11 +9,12 @@
 
 void processNormalKeys(unsigned char key, int x, int y);
 
-//void display123();
+void display123();
 
 void myOpenglWidnowInit(int argc, char **argv);
 
 void GLmainLoop();
+
 
 
 #endif //OOP_LAB_01_MYGLUT_H

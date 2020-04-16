@@ -2,7 +2,6 @@
 #define OOP_LAB_01_MYMANAGER_H
 
 #include "../frameModel/model.h"
-#include "../drawing/drawing.h"
 #include <iostream>
 
 

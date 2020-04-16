@@ -6,6 +6,7 @@
 #include "../request/request.h"
 #include "modelRotation.h"
 #include "zoom.h"
+#include "../drawing/drawing.h"
 
 
 myErrors modelInitFromFile(myModel& model, fileData& fdat);
@@ -35,5 +36,7 @@ myErrors modeAllocateMasOfPointsOffset(myModel& model, int n);
 myErrors readNPoints(myModel& model, int n, FILE* f);
 
 myErrors readNEdges(myModel& model, int n, FILE* f);
+
+myErrors modelDraw(myModel &model, drawData& ddat);
 
 #endif //OOP_LAB_01_MODEL_H

@@ -20,18 +20,20 @@ myErrors reqSetMove(request& r, int dx, int dy, int dz)
     movDatSetD(r.movDat, dx, dy, dz);
     return OK;
 }
-myErrors reqSetDrawMe(request& r)
+myErrors reqSetDrawMe(request& r, myColor& color)
 {
     r.action = drawMe;
+    drawDatSetColor(r.dDat, color);
     return OK;
 }
-myErrors reqSetReadFromFile(request& r, char* filename)
+
+myErrors reqSetReadFromFile(request& r, const char* filename)
 {
     r.action = modelReadFromFile;
     fileDatSetFilename(r.fileDat, filename);
 }
 
-myErrors fileDatSetFilename(fileData& fdat, char* filename)
+myErrors fileDatSetFilename(fileData& fdat, const char* filename)
 {
     fdat.filename = filename;
     return OK;
@@ -55,6 +57,12 @@ myErrors rotDatSet(rotationData& rdat, char axis, int rotK)
 {
     rdat.rotationAxis = axis;
     rdat.rotationAngle = rotK;
+    return OK;
+}
+
+myErrors drawDatSetColor(drawData& dDat, myColor& color)
+{
+    dDat.color = color;
     return OK;
 }
 

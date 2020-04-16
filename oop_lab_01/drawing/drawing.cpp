@@ -1,44 +1,38 @@
 #include "drawing.h"
+#include "GLUT/glut.h"
 
 
-myErrors draw_line(myPoint& a, myPoint& b)
+
+myErrors drawLine(myPoint& a, myPoint& b, myColor& color)
 {
     glBegin(GL_LINES);
-    glColor3f(GLmodelColor);
+    glColor3f(color.r, color.g, color.b);
     glVertex2f(a.x, a.y);
     glVertex2f(b.x, b.y);
     glEnd();
+    return OK;
 }
 
-myErrors modelDraw(myModel &model)
+myErrors GLShow()
+{
+    glutSwapBuffers();
+    return OK;
+}
+
+myErrors GLEnd()
+{
+    glEnd();
+    return OK;
+}
+
+myErrors GLErase()
 {
     glClear(GL_COLOR_BUFFER_BIT);
-    myErrors error;
-    if (model.isInited)
-    {
-        for (int i = 0; i < model.num_of_points; i++) {
-            for (int j = i; j < model.num_of_points; j++) {
-                if (matrixGetElement(model.edges, i, j))
-                {
-                    myPoint a, b;
-                    if (pointCoordinateAddition(a, model.masOfPointsOffset[i], model.center) != OK)
-                    {
-                        return POINTNOTINITED;
-                    }
-                    if (pointCoordinateAddition(b,model.masOfPointsOffset[j], model.center) != OK)
-                    {
-                        return POINTNOTINITED;
-                    }
-                    draw_line(a, b);
-                }
-            }
-            glEnd();
-        }
-        glutSwapBuffers();
-    }
+    return OK;
 }
 
-myErrors drawThrowError(int error)
+
+myErrors showError(int error)
 {
     switch(error)
     {

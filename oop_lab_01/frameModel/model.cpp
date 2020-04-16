@@ -243,3 +243,35 @@ myErrors readNumber(int &num, FILE *f)
     return error;
 }
 
+myErrors modelDraw(myModel &model, drawData& ddat)
+{
+    GLErase();
+    myErrors error;
+    if (model.isInited)
+    {
+        for (int i = 0; i < model.num_of_points; i++) {
+            for (int j = i; j < model.num_of_points; j++) {
+                if (matrixGetElement(model.edges, i, j))
+                {
+                    myPoint a, b;
+                    error = pointCoordinateAddition(a, model.masOfPointsOffset[i], model.center);
+                    if (error != OK)
+                    {
+                        return error;
+                    }
+                    error = pointCoordinateAddition(b,model.masOfPointsOffset[j], model.center);
+                    if (error != OK)
+                    {
+                        return error;
+                    }
+                    error = drawLine(a, b, ddat.color);
+                    if (error != OK)
+                    {
+                        return error;
+                    }
+                }
+            }
+        }
+        GLShow();
+    }
+}

@@ -5,18 +5,11 @@ CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../defines.h
 CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../drawing/colorsDefine.h
 CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../drawing/drawing.cpp
 CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../drawing/drawing.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../frameModel/frameStructure.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../frameModel/model.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../frameModel/modelRotation.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../frameModel/zoom.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../glutWindow/glutDefines.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../glutWindow/myGLUT.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../manager/myManager.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../matrix/matrix.h
 CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../point/point.h
-CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o: ../request/request.h
 
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../defines.h
+CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../drawing/colorsDefine.h
+CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../drawing/drawing.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../frameModel/frameStructure.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../frameModel/model.cpp
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../frameModel/model.h
@@ -27,6 +20,7 @@ CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../point/point.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o: ../request/request.h
 
 CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../defines.h
+CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../drawing/colorsDefine.h
 CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../frameModel/frameStructure.h
 CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../frameModel/modelRotation.cpp
 CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../frameModel/modelRotation.h
@@ -35,6 +29,7 @@ CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../point/point.h
 CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o: ../request/request.h
 
 CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: ../defines.h
+CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: ../drawing/colorsDefine.h
 CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: ../frameModel/frameStructure.h
 CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: ../frameModel/zoom.cpp
 CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o: ../frameModel/zoom.h
@@ -79,8 +74,6 @@ CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../frameModel/frameStructure.
 CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../frameModel/model.h
 CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../frameModel/modelRotation.h
 CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../frameModel/zoom.h
-CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../glutWindow/glutDefines.h
-CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../glutWindow/myGLUT.h
 CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../manager/myManager.cpp
 CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../manager/myManager.h
 CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o: ../matrix/matrix.h
@@ -96,6 +89,7 @@ CMakeFiles/oop_lab_01.dir/point/point.cpp.o: ../point/point.cpp
 CMakeFiles/oop_lab_01.dir/point/point.cpp.o: ../point/point.h
 
 CMakeFiles/oop_lab_01.dir/request/request.cpp.o: ../defines.h
+CMakeFiles/oop_lab_01.dir/request/request.cpp.o: ../drawing/colorsDefine.h
 CMakeFiles/oop_lab_01.dir/request/request.cpp.o: ../request/request.cpp
 CMakeFiles/oop_lab_01.dir/request/request.cpp.o: ../request/request.h
 

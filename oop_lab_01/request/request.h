@@ -1,6 +1,7 @@
 #ifndef OOP_LAB_01_REQUEST_H
 #define OOP_LAB_01_REQUEST_H
 #include "../defines.h"
+#include "../drawing/colorsDefine.h"
 
 struct rotationData
 {
@@ -25,6 +26,11 @@ struct fileData
     const char* filename;
 };
 
+struct drawData
+{
+    myColor color;
+};
+
 struct request
 {
     myAction action;
@@ -33,6 +39,7 @@ struct request
         moveData movDat;
         zoomData zoomDat;
         fileData fileDat;
+        drawData dDat;
     };
 };
 
@@ -42,16 +49,18 @@ myErrors reqSetZoom(request& r, double zoomK);
 
 myErrors reqSetMove(request& r, int dx, int dy, int dz);
 
-myErrors reqSetDrawMe(request& r);
+myErrors reqSetDrawMe(request& r, myColor& color);
 
-myErrors reqSetReadFromFile(request& r, char* filename);
+myErrors reqSetReadFromFile(request& r, const char* filename);
 
-myErrors fileDatSetFilename(fileData& fdat, char* filename);
+myErrors fileDatSetFilename(fileData& fdat, const char* filename);
 
 myErrors movDatSetD(moveData& mdat, int dx, int dy, int dz);
 
 myErrors zoomDatSet(zoomData& zdat, double zoom);
 
 myErrors rotDatSet(rotationData& rdat, char axis, int rotK);
+
+myErrors drawDatSetColor(drawData& dDat, myColor& color);
 
 #endif //OOP_LAB_01_REQUEST_H

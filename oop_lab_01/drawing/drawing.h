@@ -2,16 +2,20 @@
 #define OOP_LAB_01_DRAWING_H
 
 #include <iostream>
-#include "../glutWindow/myGLUT.h"
-#include "../frameModel/frameStructure.h"
+#include "../point/point.h"
 #include "colorsDefine.h"
+//#include "GLUT/glut.h"
 
 
-myErrors draw_line(myPoint& a, myPoint& b);
+myErrors drawLine(myPoint& a, myPoint& b, myColor& color);
 
-myErrors modelDraw(myModel &model);
+myErrors GLErase();
 
-myErrors drawThrowError(int errortype);
+myErrors GLShow();
+
+myErrors GLEnd();
+
+myErrors showError(int error);
 
 
 #endif //OOP_LAB_01_DRAWING_H

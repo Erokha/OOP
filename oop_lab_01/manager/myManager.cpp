@@ -18,7 +18,7 @@ myErrors taskManager(request& req)
             error = modelMoveCenter(mod, req.movDat);
             break;
         case drawMe:
-            error = modelDraw(mod);
+            error = modelDraw(mod, req.dDat);
             break;
         case modelReadFromFile:
             error  = modelInitFromFile(mod, req.fileDat);

@@ -6,18 +6,11 @@ CMakeFiles/oop_lab_01.dir/drawing/drawing.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
  /Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.cpp
  /Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
- /Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
- /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h
- /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h
- /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h
- /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/glutDefines.h
- /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
- /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
- /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
  /Users/kymblc/CLionProjects/oop_lab_01/point/point.h
- /Users/kymblc/CLionProjects/oop_lab_01/request/request.h
 CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/defines.h
+ /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
+ /Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.cpp
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h
@@ -28,6 +21,7 @@ CMakeFiles/oop_lab_01.dir/frameModel/model.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/request/request.h
 CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/defines.h
+ /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h
@@ -36,6 +30,7 @@ CMakeFiles/oop_lab_01.dir/frameModel/modelRotation.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/request/request.h
 CMakeFiles/oop_lab_01.dir/frameModel/zoom.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/defines.h
+ /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h
@@ -80,8 +75,6 @@ CMakeFiles/oop_lab_01.dir/manager/myManager.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h
  /Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h
- /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/glutDefines.h
- /Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h
  /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp
  /Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h
  /Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h
@@ -97,5 +90,6 @@ CMakeFiles/oop_lab_01.dir/point/point.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/point/point.h
 CMakeFiles/oop_lab_01.dir/request/request.cpp.o
  /Users/kymblc/CLionProjects/oop_lab_01/defines.h
+ /Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h
  /Users/kymblc/CLionProjects/oop_lab_01/request/request.cpp
  /Users/kymblc/CLionProjects/oop_lab_01/request/request.h

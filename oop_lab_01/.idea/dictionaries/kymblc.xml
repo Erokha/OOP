@@ -2,6 +2,9 @@
   <dictionary name="kymblc">
     <words>
       <w>fname</w>
+      <w>glclearcolora</w>
+      <w>glyfrom</w>
+      <w>widnow</w>
     </words>
   </dictionary>
 </component>

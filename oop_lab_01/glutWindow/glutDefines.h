@@ -1,14 +1,24 @@
 #ifndef OOP_LAB_01_GLUTDEFINES_H
 #define OOP_LAB_01_GLUTDEFINES_H
 
-#define myGLWIDTH 400
-#define myGLHEIGHT 400
-#define myGLCLEARCOLOR 1.0, 1.0, 1.0, 1.0
-#define myGLORTHO -200.0, 200.0, -200.0, 200.0, -200.0, 200.0
-#define fname "model.txt"
+
+#include "../drawing/colorsDefine.h"
+
+const double GLYFROM = -200.0;
+const double GLYTO = 200.0;
+
+const double GLXFROM = -200.0;
+const double GLXTO = 200.0;
+
+const double GLZFROM = -200.0;
+const double GLZTO = 200.0;
 
 
-const int ROT = 6;
+const int myGLWIDTH = 400;
+const int myGLHEIGHT = 400;
+
+
+const int ROTANG = 6;
 const double zoomConst = 2.0;
 const double outZoomConst = 0.5;
 
@@ -18,6 +28,8 @@ const char yAxis = 'y';
 const int dMovePos = 20;
 const int dMoveNeg = -20;
 const int dState = 0;
+
+const myColor defaultModelColor = black;
 
 
 
