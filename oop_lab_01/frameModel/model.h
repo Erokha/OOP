@@ -11,32 +11,34 @@
 
 myErrors modelInitFromFile(myModel& model, fileData& fdat);
 
-void modelReCalculatePoints(myModel& model);
+myErrors modelReadAllPointsFromFile(myMasOfPoints& points, FILE *f);
 
-void modelGetCenter(myModel& model);
+myErrors modelReadAllEdgesFromFile(matrix& edges, int numOfPoints, FILE* f);
 
-myErrors modelfillEdges(FILE* f, myModel& model);
+myErrors modelGetCenter(myPoint& center, myMasOfPoints& mas);
 
-myErrors modelfillPoints(FILE* f, myModel& model);
+myErrors modelCalculateOffset(myMasOfPoints& mas, myPoint center);
 
 myErrors modelMoveCenter(myModel& model, moveData& movdat);
 
-void freeMyMemory(myModel& model);
+myErrors modelFreeMemory(myModel& model);
+
+myErrors modelTransfer(myModel& dest, myModel& source);
 
 myModel modelBasicInit();
 
-void modelCopy(myModel& source, myModel& dest);
+myErrors modelCheckInit(myModel& model);
 
-int modelSetInited(myModel& model);
+myErrors readNPoints(myMasOfPoints& points, int n, FILE* f);
+
+myErrors readNEdges(matrix& edges, int n, FILE* f);
 
 myErrors readNumber(int &num, FILE *f);
 
-myErrors modeAllocateMasOfPointsOffset(myModel& model, int n);
-
-myErrors readNPoints(myModel& model, int n, FILE* f);
-
-myErrors readNEdges(myModel& model, int n, FILE* f);
-
 myErrors modelDraw(myModel &model, drawData& ddat);
+
+myErrors drawEdges(myMasOfPoints& mas, matrix& edges, drawData& ddat);
+
+myErrors calculateRealPoints(myMasOfPoints& mas, myPoint& center);
 
 #endif //OOP_LAB_01_MODEL_H

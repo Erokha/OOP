@@ -4,18 +4,16 @@
 #include <iostream>
 #include "../point/point.h"
 #include "colorsDefine.h"
-//#include "GLUT/glut.h"
+#include "GLUT/glut.h"
+#include "../request/request.h"
 
 
-myErrors drawLine(myPoint& a, myPoint& b, myColor& color);
+myErrors drawLine(myPoint& a, myPoint& b, myColor color, primitiveType type);
 
-myErrors GLErase();
+myErrors GLErase(colorBufferBit color);
 
 myErrors GLShow();
 
-myErrors GLEnd();
-
-myErrors showError(int error);
 
 
 #endif //OOP_LAB_01_DRAWING_H

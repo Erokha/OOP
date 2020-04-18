@@ -9,84 +9,96 @@ myErrors modelInitFromFile(myModel& model, fileData& fdat)
     }
 
     myModel tmp = modelBasicInit();
-    myErrors error = modelfillPoints(f, tmp);
+    myErrors error = modelReadAllPointsFromFile(tmp.points, f);
     if (error == OK)
     {
-        error = modelfillEdges(f, tmp);
+        error = modelReadAllEdgesFromFile(tmp.edges, getNumOfPoints(tmp.points), f);
     }
     fclose(f);
     if (error == OK)
     {
-        modelGetCenter(tmp);
-        modelReCalculatePoints(tmp);
+        modelGetCenter(tmp.center, tmp.points);
+        modelCalculateOffset(tmp.points, tmp.center);
 
-        freeMyMemory(model);
-        modelCopy(model, tmp);
-        modelSetInited(model);
+        modelFreeMemory(model);
+        modelCheckInit(tmp);
+        modelTransfer(model, tmp);
+
     }
-    freeMyMemory(tmp);
+    modelFreeMemory(tmp);
     return error;
 }
 
 
-myErrors modelfillPoints(FILE* f, myModel& model)
+myErrors modelReadAllPointsFromFile(myMasOfPoints& points, FILE *f)
 {
     int n;
-    if (f != NULL)
-    {
-        if (readNumber(n, f) != OK)
-        {
-            return ERRORNUMOFPOINTS;
-        }
-        if (modeAllocateMasOfPointsOffset(model, n) != OK)
-        {
-            return NOFREESPACE;
-        }
-        if (readNPoints(model, n, f) != OK)
-        {
-            return ERRORWHILEREADINPOINTS;
-        }
+    if (f == NULL) {
+        return NOFILE;
     }
-    return OK;
+    myErrors error = readNumber(n, f);
+    if (error != OK)
+    {
+        return error;
+    }
+    error = allocateMasOfPoints(points, n);
+    if (error != OK)
+    {
+        masOfPointsFreeMemory(points);
+        return error;
+    }
+    error = readNPoints(points, n, f);
+    if (error != OK)
+    {
+        masOfPointsFreeMemory(points);
+    }
+    masOfPointsCheck(points);
+    return error;
 }
 
-
-myErrors modelfillEdges(FILE* f, myModel& model)
+myErrors modelReadAllEdgesFromFile(matrix& edges, int numOfPoints, FILE* f)
 {
+    if (f == NULL) {
+        return NOFILE;
+    }
     int n;
-    if (f != NULL)
+    myErrors error = readNumber(n, f);
+    if (error != OK)
     {
-        if (readNumber(n, f) != OK)
-        {
-            return ERRORNUMOFEDGES;
-        }
-        if (createMatrix(model.edges, model.num_of_points) != OK)
-        {
-            return NOFREESPACE;
-        }
-        if (readNEdges(model, n, f) != OK)
-        {
-            return ERRORWHILEREADINGEDGES;
-        }
+        return error;
     }
-    return OK;
+    error = createMatrix(edges, numOfPoints);
+    if (error != OK)
+    {
+        return error;
+    }
+    error = readNEdges(edges, n, f);
+    if (error != OK)
+    {
+        matrixFreeMemory(edges);
+    }
+    matrixCheck(edges);
+    return error;
 }
 
-
-void modelGetCenter(myModel& model)
+myErrors modelGetCenter(myPoint& center, myMasOfPoints& mas)
 {
-    double xmin = getPointX(model.masOfPointsOffset[0]);
-    double xmax = getPointX(model.masOfPointsOffset[0]);
-    double ymin = getPointY(model.masOfPointsOffset[0]);
-    double ymax = getPointY(model.masOfPointsOffset[0]);
-    double zmin = getPointZ(model.masOfPointsOffset[0]);
-    double zmax = getPointZ(model.masOfPointsOffset[0]);
+    if (!mas.isInited)
+    {
+        return POINTNOTINITED;
+    }
+    double xmin = getPointX(mas.masOfPoints[0]);
+    double xmax = getPointX(mas.masOfPoints[0]);
+    double ymin = getPointY(mas.masOfPoints[0]);
+    double ymax = getPointY(mas.masOfPoints[0]);
+    double zmin = getPointZ(mas.masOfPoints[0]);
+    double zmax = getPointZ(mas.masOfPoints[0]);
     double x, y, z;
-    for(int i = 0; i < model.num_of_points; i++)
+    for(int i = 0; i < mas.numOfPoints; i++)
     {
-        x = getPointX(model.masOfPointsOffset[i]);
-        y = getPointY(model.masOfPointsOffset[i]);
-        z = getPointZ(model.masOfPointsOffset[i]);
+        x = getPointX(mas.masOfPoints[i]);
+        y = getPointY(mas.masOfPoints[i]);
+        z = getPointZ(mas.masOfPoints[i]);
 
         if(x > xmax) {
             xmax = x;
@@ -106,123 +118,105 @@ void modelGetCenter(myModel& model)
             zmin = z;
         }
     }
-    initPoint(model.center, ((xmax + xmin) / 2), ((zmax + zmin) / 2), ((zmax + zmin) / 2));
+    return initPoint(center, ((xmax + xmin) / 2), ((zmax + zmin) / 2), ((zmax + zmin) / 2));
 }
 
-void modelReCalculatePoints(myModel& model)
+myErrors modelCalculateOffset(myMasOfPoints& mas, myPoint center)
 {
-    for(int i = 0; i < model.num_of_points; i++)
+    myErrors error = OK;
+    for(int i = 0; (i < mas.numOfPoints && error == OK); i++)
     {
-        double newx = getPointX(model.masOfPointsOffset[i]) - getPointX(model.center);
-        double newy = getPointY(model.masOfPointsOffset[i]) - getPointY(model.center);
-        double newz = getPointZ(model.masOfPointsOffset[i]) - getPointZ(model.center);
-        initPoint(model.masOfPointsOffset[i], newx, newy, newz);
+        double newx = getPointX(mas.masOfPoints[i]) - getPointX(center);
+        double newy = getPointY(mas.masOfPoints[i]) - getPointY(center);
+        double newz = getPointZ(mas.masOfPoints[i]) - getPointZ(center);
+        error = initPoint(mas.masOfPoints[i], newx, newy, newz);
     }
+    return error;
 }
 
 myErrors modelMoveCenter(myModel& model, moveData& movdat)
 {
-    if (pointMove(model.center, movdat.dx, movdat.dy, movdat.dz) != OK)
-    {
-        return MOVERROR;
-    } else {
-        return OK;
-    }
+    return pointMove(model.center, movdat.dx, movdat.dy, movdat.dz);
 }
 
-void freeMyMemory(myModel& model)
+myErrors modelFreeMemory(myModel& model)
 {
-    delete model.masOfPointsOffset;
-    freeMyMatrix(model.edges);
-    model.num_of_points = 0;
+    masOfPointsFreeMemory(model.points);
+    matrixFreeMemory(model.edges);
     model.isInited = false;
+    return OK;
 }
 
-void modelCopy(myModel& dest, myModel& source)
+myErrors modelTransfer(myModel& dest, myModel& source)
 {
+    myErrors error;
     dest = modelBasicInit();
-    dest.isInited = source.isInited;
-    dest.num_of_points = source.num_of_points;
-    dest.center = source.center;
-    dest.masOfPointsOffset = new myPoint[dest.num_of_points];
-    for(int i = 0; i < dest.num_of_points; i++)
+
+    error = masOfPointsTransfer(dest.points, source.points);
+    if (error != OK)
     {
-        dest.masOfPointsOffset[i] = source.masOfPointsOffset[i];
+        return error;
     }
-    copyMatrix(dest.edges, source.edges);
+    pointTransfer(dest.center, source.center);
+    error = copyMatrix(dest.edges, source.edges);
+    if (error == OK)
+    {
+        dest.isInited = source.isInited;
+    }
+    return error;
 }
 
 myModel modelBasicInit()
 {
     myModel model;
-    model.num_of_points = 0;
     model.isInited = false;
-    model.masOfPointsOffset = NULL;
+    masOfPointsBasicInit(model.points);
     createEmptyMatrix(model.edges);
     return model;
 }
 
-int modelSetInited(myModel& model)
+myErrors modelCheckInit(myModel& model)
 {
-    model.isInited = true;
-}
-
-myErrors modeAllocateMasOfPointsOffset(myModel& model, int n)
-{
-    model.num_of_points = n;
-    model.masOfPointsOffset = new myPoint[n];
-    if (model.masOfPointsOffset == NULL)
-    {
-        return NOFREESPACE;
-    }
+    model.isInited = masOfPointsShowInitialization(model.points) &&
+                     matrixShowInitialization(model.edges) && pointShowInitialization(model.center);
     return OK;
 }
 
-myErrors readNPoints(myModel& model, int n, FILE* f)
+myErrors readNPoints(myMasOfPoints& points, int n, FILE* f)
 {
-    if (f != NULL)
-    {
-        if (n >= 0) {
-            for (int i = 0; i < n; i++)
-            {
-                double x, y, z;
-                if (fscanf(f, "%lf %lf %lf", &x, &y, &z) != 3)
-                {
-                    return POINTSERROR;
-                }
-                initPoint(model.masOfPointsOffset[i], x, y, z);
-            }
-        }
-    }
-    else
+    if (f == NULL)
     {
         return NOFILE;
     }
+    myErrors error = OK;
+    if (n <= 0)
+    {
+        return INCORRECTPOINTSSIZE;
+    }
+    for (int i = 0; (i < n && error == OK); i++)
+    {
+        error = readPointFromFile(points.masOfPoints[i], f);
+    }
+    return error;
 }
 
-myErrors readNEdges(myModel& model, int n, FILE* f)
+myErrors readNEdges(matrix& edges, int n, FILE* f)
 {
-    if (f != NULL)
-    {
-        if (n >= 0) {
-            for (int i = 0; i < n; i++)
-            {
-                int a, b;
-                if (fscanf(f, "%d %d", &a, &b) != 2)
-                {
-                    return ERRORWHILEREADINGEDGES;
-                }
-                if (matrixSetElement(model.edges, 1, a, b) != OK)
-                {
-                    return OUTOFEDGES;
-                }
-            }
-        }
-    }
-    else
+    if (f == NULL)
     {
         return NOFILE;
     }
+
+    myErrors error = OK;
+    if (n <= 0) {
+        return NOTENOUGHPOINTS;
+    }
+
+    for (int i = 0; (i < n && error == OK); i++)
+    {
+        error = matrixReadElementFromFile(edges, f);
+    }
+    return error;
 }
 
 myErrors readNumber(int &num, FILE *f)
@@ -245,33 +239,54 @@ myErrors readNumber(int &num, FILE *f)
 
 myErrors modelDraw(myModel &model, drawData& ddat)
 {
-    GLErase();
-    myErrors error;
-    if (model.isInited)
+    GLErase(ddat.clearColor);
+    myErrors error = OK;
+    myModel tmp = modelBasicInit();
+    if (!model.isInited)
     {
-        for (int i = 0; i < model.num_of_points; i++) {
-            for (int j = i; j < model.num_of_points; j++) {
-                if (matrixGetElement(model.edges, i, j))
-                {
-                    myPoint a, b;
-                    error = pointCoordinateAddition(a, model.masOfPointsOffset[i], model.center);
-                    if (error != OK)
-                    {
-                        return error;
-                    }
-                    error = pointCoordinateAddition(b,model.masOfPointsOffset[j], model.center);
-                    if (error != OK)
-                    {
-                        return error;
-                    }
-                    error = drawLine(a, b, ddat.color);
-                    if (error != OK)
-                    {
-                        return error;
-                    }
-                }
+        return modelNotInited;
+    }
+    error = modelTransfer(tmp, model);
+    if (error != OK)
+    {
+        modelFreeMemory(tmp);
+        return error;
+    }
+    error = calculateRealPoints(tmp.points, tmp.center);
+    if (error != OK)
+    {
+        modelFreeMemory(tmp);
+        return error;
+    }
+    error = drawEdges(tmp.points, tmp.edges, ddat);
+    GLShow();
+    modelFreeMemory(tmp);
+    return error;
+}
+
+myErrors drawEdges(myMasOfPoints& mas, matrix& edges, drawData& ddat)
+{
+    int n = mas.numOfPoints;
+    myErrors error = OK;
+    for (int i = 0; (i < n && error == OK); i++)
+    {
+        for (int j = i; (j < n && error == OK); j++)
+        {
+            if (edges.mas[i][j])
+            {
+                error = drawLine(mas.masOfPoints[i], mas.masOfPoints[j], ddat.color, ddat.edgeType);
             }
         }
-        GLShow();
     }
+    return error;
+}
+
+myErrors calculateRealPoints(myMasOfPoints& mas, myPoint& center)
+{
+    myErrors error = OK;
+    for (int i = 0; (i < mas.numOfPoints && error == OK); i++)
+    {
+        error = pointCoordinateAddition(mas.masOfPoints[i], center);
+    }
+    return error;
 }

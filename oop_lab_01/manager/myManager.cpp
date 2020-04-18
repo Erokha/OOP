@@ -12,7 +12,7 @@ myErrors taskManager(request& req)
             error = modelRotateByAxis(mod, req.rotDat);
             break;
         case modelScale:
-            error = modelZoom(mod, req.zoomDat);
+            error = modelZoom(mod.points, req.zoomDat);
             break;
         case modelMove:
             error = modelMoveCenter(mod, req.movDat);
@@ -22,6 +22,9 @@ myErrors taskManager(request& req)
             break;
         case modelReadFromFile:
             error  = modelInitFromFile(mod, req.fileDat);
+            break;
+        case endProgramm:
+            error = modelFreeMemory(mod);
             break;
         default:
             error = NOTASK;

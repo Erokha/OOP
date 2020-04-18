@@ -31,6 +31,13 @@ myErrors reqSetReadFromFile(request& r, const char* filename)
 {
     r.action = modelReadFromFile;
     fileDatSetFilename(r.fileDat, filename);
+    return OK;
+}
+
+myErrors reqSetEnd(request& r)
+{
+    r.action = endProgramm;
+    return OK;
 }
 
 myErrors fileDatSetFilename(fileData& fdat, const char* filename)
@@ -63,6 +70,10 @@ myErrors rotDatSet(rotationData& rdat, char axis, int rotK)
 myErrors drawDatSetColor(drawData& dDat, myColor& color)
 {
     dDat.color = color;
+    dDat.clearColor = GL_COLOR_BUFFER_BIT;
+    dDat.edgeType = GL_LINES;
     return OK;
 }
+
+
 

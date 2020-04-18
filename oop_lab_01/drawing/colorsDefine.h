@@ -12,6 +12,8 @@ struct myColor
 const myColor clear = {1.0, 1.0, 1.0, 1.0};
 const myColor black = {0.0, 0.0, 0.0, 0.0};
 const myColor blue = {0.0, 0.0, 1.0, 0.0};
+const myColor green = {0.0, 1.0, 0.0, 0.0};
+const myColor red = {1.0, 0.0, 0.0, 0.0};
 
 
 

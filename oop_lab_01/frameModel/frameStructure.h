@@ -5,9 +5,8 @@
 
 struct myModel
 {
-    int num_of_points;
     myPoint center;
-    myPoint* masOfPointsOffset;
+    myMasOfPoints points;
     matrix edges;
     bool isInited;
 };

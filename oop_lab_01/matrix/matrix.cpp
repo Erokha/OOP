@@ -1,6 +1,6 @@
 #include "matrix.h"
 
-myErrors freeMyMatrix(matrix& m)
+myErrors matrixFreeMemory(matrix& m)
 {
     for (int i = 0; i < m.size; i++)
     {
@@ -10,6 +10,7 @@ myErrors freeMyMatrix(matrix& m)
         }
     }
     m.size = 0;
+    m.isInited = false;
     delete m.mas;
     return OK;
 }
@@ -50,6 +51,26 @@ myErrors matrixSetElement(matrix& m, int data, int posi, int posj)
     }
 }
 
+myErrors matrixReadElementFromFile(matrix& m, FILE*f)
+{
+    if (f == NULL)
+    {
+        return NOFILE;
+    }
+    int a, b;
+    if (fscanf(f, "%d %d", &a, &b) != 2)
+    {
+        return ERRORWHILEREADINGEDGES;
+    }
+    if (((a >= m.size) || (b >= m.size)) || (a < 0) || (b < 0))
+    {
+        return OUTOFEDGES;
+    }
+    m.mas[a][b] = 1;
+    m.mas[b][a] = 1;
+    return OK;
+}
+
 int matrixGetElement(matrix &m, int posi, int posj)
 {
     if ((posi > m.size) || (posj > m.size))
@@ -65,20 +86,42 @@ int matrixGetElement(matrix &m, int posi, int posj)
 myErrors createEmptyMatrix(matrix& m)
 {
     m.size = 0;
+    m.isInited = false;
     m.mas = NULL;
 }
 
 myErrors copyMatrix(matrix& dest, matrix& source)
 {
-    if (createMatrix(dest, source.size) == OK)
+    if (!source.isInited)
     {
-        for (int i = 0; i < source.size; i++) {
-            for (int j = 0; j < source.size; j++) {
-                dest.mas[i][j] = source.mas[i][j];
-            }
-        }
-        return OK;
-    } else {
+        return MATRIXNOTINITED;
+    }
+    if (createMatrix(dest, source.size) != OK)
+    {
         return NOFREESPACE;
     }
+    for (int i = 0; i < source.size; i++) {
+        for (int j = 0; j < source.size; j++) {
+            dest.mas[i][j] = source.mas[i][j];
+        }
+    }
+    dest.isInited = source.isInited;
+    return OK;
+}
+
+myErrors matrixCheck(matrix& m)
+{
+    if (m.size <= 0 || m.mas == NULL)
+    {
+        m.isInited = false;
+    } else
+    {
+        m.isInited = true;
+    }
+    return OK;
+}
+
+bool matrixShowInitialization(matrix& m)
+{
+    return m.isInited;
 }

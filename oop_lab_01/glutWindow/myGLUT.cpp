@@ -1,5 +1,4 @@
 #include "myGLUT.h"
-#include "../drawing/colorsDefine.h"
 
 
 void processNormalKeys(unsigned char key, int x, int y) {
@@ -18,6 +17,12 @@ void processNormalKeys(unsigned char key, int x, int y) {
             break;
         case 'd':
             reqSetRotation(req, -ROTANG, yAxis);
+            break;
+        case 'q':
+            reqSetRotation(req, ROTANG, zAxis);
+            break;
+        case 'e':
+            reqSetRotation(req, -ROTANG, zAxis);
             break;
         case '=':
             reqSetZoom(req, zoomConst);
@@ -38,7 +43,8 @@ void processNormalKeys(unsigned char key, int x, int y) {
             reqSetMove(req, dMovePos, dState, dState);
             break;
         case '`':
-            reqSetReadFromFile(req, "model.txt");
+            reqSetEnd(req);
+            glutDestroyWindow(EXITNORMAL);
             break;
         default:
             reqSetDrawMe(req, color);
@@ -70,14 +76,12 @@ void myOpenglWidnowInit(int argc, char **argv)
     glutIdleFunc(display123);
 
 
-    request r{};
+    request r;
     reqSetReadFromFile(r, argv[1]);
     taskManager(r);
     reqSetDrawMe(r, color);
     taskManager(r);
 }
-
-
 
 void GLmainLoop()
 {

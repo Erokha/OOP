@@ -2,6 +2,10 @@
 #define OOP_LAB_01_REQUEST_H
 #include "../defines.h"
 #include "../drawing/colorsDefine.h"
+#include "/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks/OpenGL.framework/Headers/gl.h"
+
+typedef uint32_t primitiveType;
+typedef uint32_t colorBufferBit;
 
 struct rotationData
 {
@@ -29,6 +33,8 @@ struct fileData
 struct drawData
 {
     myColor color;
+    colorBufferBit clearColor;
+    primitiveType edgeType;
 };
 
 struct request
@@ -52,6 +58,8 @@ myErrors reqSetMove(request& r, int dx, int dy, int dz);
 myErrors reqSetDrawMe(request& r, myColor& color);
 
 myErrors reqSetReadFromFile(request& r, const char* filename);
+
+myErrors reqSetEnd(request& r);
 
 myErrors fileDatSetFilename(fileData& fdat, const char* filename);
 

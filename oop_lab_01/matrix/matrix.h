@@ -7,9 +7,10 @@ struct matrix
 {
     int ** mas;
     int size;
+    bool isInited;
 };
 
-myErrors freeMyMatrix(matrix& m);
+myErrors matrixFreeMemory(matrix& m);
 
 myErrors createMatrix(matrix& m, int size);
 
@@ -20,5 +21,11 @@ int matrixGetElement(matrix &m, int posi, int posj);
 myErrors createEmptyMatrix(matrix& m);
 
 myErrors copyMatrix(matrix& source, matrix& dest);
+
+myErrors matrixReadElementFromFile(matrix& m, FILE*f);
+
+myErrors matrixCheck(matrix& m);
+
+bool matrixShowInitialization(matrix& m);
 
 #endif //OOP_LAB_01_MATRIX_H

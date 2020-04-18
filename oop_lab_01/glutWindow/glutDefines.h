@@ -18,16 +18,20 @@ const int myGLWIDTH = 400;
 const int myGLHEIGHT = 400;
 
 
-const int ROTANG = 6;
+const int ROTANG = 7;
 const double zoomConst = 2.0;
 const double outZoomConst = 0.5;
 
 const char xAxis = 'x';
 const char yAxis = 'y';
+const char zAxis = 'z';
 
 const int dMovePos = 20;
 const int dMoveNeg = -20;
 const int dState = 0;
+
+
+const int EXITNORMAL = 1;
 
 const myColor defaultModelColor = black;
 

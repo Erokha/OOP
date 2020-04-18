@@ -21,7 +21,10 @@ enum myErrors
     FILEWRONGFORMAT,
     ZOOMERROR,
     MOVERROR,
+    EMPTYMAS,
+    MATRIXNOTINITED,
     NOAXIS,
+    INCORRECTPOINTSSIZE,
     NOTASK,
     modelNotInited
 };
@@ -32,6 +35,7 @@ enum myAction
     modelRotation,
     modelScale,
     modelMove,
+    endProgramm,
     drawMe
 };
 
