@@ -22,15 +22,15 @@ struct myMasOfPoints
 
 myErrors initPoint(myPoint& point, double x, double y, double z);
 
-myErrors rotatePointByX(myPoint& pointToRotate, myPoint& pointRegarding, double cos, double sin);
+myErrors rotatePointByX(myPoint& pointToRotate, double cos, double sin);
 
-myErrors rotatePointByY(myPoint& pointToRotate, myPoint& pointRegarding, double cos, double sin);
+myErrors rotatePointByY(myPoint& pointToRotate, double cos, double sin);
 
-myErrors rotatePointByZ(myPoint& pointToRotate, myPoint& pointRegarding, double cos, double sin);
+myErrors rotatePointByZ(myPoint& pointToRotate, double cos, double sin);
 
 myErrors pointMove(myPoint& point, double dx, double dy, double dz);
 
-myErrors pointZoom(myPoint& pointToMove, myPoint& pointRegarding, double k);
+myErrors pointZoom(myPoint& pointToMove, double k);
 
 double getPointX(myPoint& point);
 
@@ -53,6 +53,8 @@ myErrors masOfPointsFreeMemory(myMasOfPoints& mas);
 myErrors pointTransfer(myPoint& dest, myPoint& source);
 
 myErrors masOfPointsTransfer(myMasOfPoints& dest, myMasOfPoints& source);
+
+myErrors calculatePointOffset(myPoint& pointCalculating, myPoint pointRegarding);
 
 int getNumOfPoints(myMasOfPoints& mas);
 

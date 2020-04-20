@@ -1,8 +1,8 @@
 #include "modelRotation.h"
 
-myErrors modelRotateByX(myModel &m, myPoint &pointRegarding, double rotationAngle)
+myErrors modelRotateByX(myMasOfPoints& points, double rotationAngle)
 {
-    if(!m.isInited)
+    if(!points.isInited)
     {
         return modelNotInited;
     }
@@ -10,15 +10,15 @@ myErrors modelRotateByX(myModel &m, myPoint &pointRegarding, double rotationAngl
     double angleSin = sin(alpha);
     double angleCos = cos(alpha);
     myErrors error = OK;
-    for (int i = 0; (i < m.points.numOfPoints && error == OK); i++) {
-        error = rotatePointByX(m.points.masOfPoints[i], pointRegarding, angleCos, angleSin);
+    for (int i = 0; (i < points.numOfPoints && error == OK); i++) {
+        error = rotatePointByX(points.masOfPoints[i], angleCos, angleSin);
     }
     return error;
 }
 
-myErrors modelRotateByY(myModel &m, myPoint &pointRegarding, double rotationAngle)
+myErrors modelRotateByY(myMasOfPoints& points, double rotationAngle)
 {
-    if(!m.isInited)
+    if(!points.isInited)
     {
         return modelNotInited;
     }
@@ -26,15 +26,15 @@ myErrors modelRotateByY(myModel &m, myPoint &pointRegarding, double rotationAngl
     double angleSin = sin(alpha);
     double angleCos = cos(alpha);
     myErrors error = OK;
-    for (int i = 0; (i < m.points.numOfPoints && error == OK); i++) {
-        error = rotatePointByY(m.points.masOfPoints[i], pointRegarding, angleCos, angleSin);
+    for (int i = 0; (i < points.numOfPoints && error == OK); i++) {
+        error = rotatePointByY(points.masOfPoints[i], angleCos, angleSin);
     }
     return error;
 }
 
-myErrors modelRotateByZ(myModel &m, myPoint &pointRegarding, double rotationAngle)
+myErrors modelRotateByZ(myMasOfPoints& points, double rotationAngle)
 {
-    if(!m.isInited)
+    if(!points.isInited)
     {
         return modelNotInited;
     }
@@ -42,32 +42,30 @@ myErrors modelRotateByZ(myModel &m, myPoint &pointRegarding, double rotationAngl
     double angleSin = sin(alpha);
     double angleCos = cos(alpha);
     myErrors error = OK;
-    for (int i = 0; (i < m.points.numOfPoints && error == OK); i++) {
-        error = rotatePointByZ(m.points.masOfPoints[i], pointRegarding, angleCos, angleSin);
+    for (int i = 0; (i < points.numOfPoints && error == OK); i++) {
+        error = rotatePointByZ(points.masOfPoints[i], angleCos, angleSin);
     }
     return error;
 }
 
 myErrors modelRotateByAxis(myModel& model, rotationData& rot)
 {
-    myErrors error = OK;
     if (!model.isInited)
     {
         return modelNotInited;
     }
-    myPoint c;
-    initPoint(c, 0, 0, 0);
+    myErrors error = OK;
     if (rot.rotationAxis == 'x')
     {
-        error = modelRotateByX(model, c, rot.rotationAngle);
+        error = modelRotateByX(model.points, rot.rotationAngle);
     }
     else if (rot.rotationAxis == 'y')
     {
-        error = modelRotateByY(model, c, rot.rotationAngle);
+        error = modelRotateByY(model.points, rot.rotationAngle);
     }
     else if (rot.rotationAxis == 'z')
     {
-        error = modelRotateByZ(model, c, rot.rotationAngle);
+        error = modelRotateByZ(model.points, rot.rotationAngle);
     }
     else
     {

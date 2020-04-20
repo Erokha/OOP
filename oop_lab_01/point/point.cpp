@@ -10,58 +10,58 @@ myErrors initPoint(struct myPoint& point, double x, double y, double z)
     return OK;
 }
 
-myErrors rotatePointByX(myPoint& pointToRotate, myPoint& pointRegarding, double cos, double sin)
+myErrors rotatePointByX(myPoint& pointToRotate, double cos, double sin)
 {
-    if (!pointToRotate.isInited || !pointRegarding.isInited)
+    if (!pointToRotate.isInited)
     {
         return POINTNOTINITED;
     }
     double newy, newz;
-    newy = pointRegarding.y + (pointToRotate.y - pointRegarding.y) * cos - (pointToRotate.z - pointRegarding.z) * sin;
-    newz = pointRegarding.z + (pointToRotate.y - pointRegarding.y) * sin + (pointToRotate.z - pointRegarding.z) * cos;
+    newy = pointToRotate.y * cos - pointToRotate.z * sin;
+    newz = pointToRotate.y * sin + pointToRotate.z * cos;
     pointToRotate.y = newy;
     pointToRotate.z = newz;
     return OK;
 }
 
-myErrors rotatePointByY(myPoint& pointToRotate, myPoint& pointRegarding, double cos, double sin)
+myErrors rotatePointByY(myPoint& pointToRotate, double cos, double sin)
 {
-    if (!pointToRotate.isInited || !pointRegarding.isInited)
+    if (!pointToRotate.isInited)
     {
         return POINTNOTINITED;
     }
     double newx, newz;
-    newx = pointRegarding.x + (pointToRotate.x - pointRegarding.x) * cos + (pointToRotate.z - pointRegarding.z) * sin;
-    newz = pointRegarding.z - (pointToRotate.x - pointRegarding.x) * sin + (pointToRotate.z - pointRegarding.z) * cos;
+    newx = pointToRotate.x * cos + pointToRotate.z * sin;
+    newz = -pointToRotate.x * sin + pointToRotate.z * cos;
     pointToRotate.x = newx;
     pointToRotate.z = newz;
     return OK;
 }
 
-myErrors rotatePointByZ(myPoint& pointToRotate, myPoint& pointRegarding, double cos, double sin)
+myErrors rotatePointByZ(myPoint& pointToRotate, double cos, double sin)
 {
-    if (!pointToRotate.isInited || !pointRegarding.isInited)
+    if (!pointToRotate.isInited)
     {
         return POINTNOTINITED;
     }
     double newx, newy;
-    newx = pointRegarding.x + (pointToRotate.x - pointRegarding.x) * cos - (pointToRotate.y - pointRegarding.y) * sin;
-    newy = pointRegarding.y + (pointToRotate.x - pointRegarding.x) * sin + (pointToRotate.y - pointRegarding.y) * cos;
+    newx = pointToRotate.x * cos - pointToRotate.y * sin;
+    newy = pointToRotate.x * sin + pointToRotate.y * cos;
     pointToRotate.x = newx;
     pointToRotate.y = newy;
     return OK;
 }
 
 
-myErrors pointZoom(myPoint& pointToMove, myPoint& pointRegarding, double k)
+myErrors pointZoom(myPoint& pointToMove, double k)
 {
-    if (!pointToMove.isInited || !pointRegarding.isInited)
+    if (!pointToMove.isInited)
     {
         return POINTNOTINITED;
     }
-    pointToMove.x = pointRegarding.x + (pointToMove.x - pointRegarding.x) * k;
-    pointToMove.y = pointRegarding.y + (pointToMove.y - pointRegarding.y) * k;
-    pointToMove.z = pointRegarding.z + (pointToMove.z - pointRegarding.z) * k;
+    pointToMove.x = pointToMove.x * k;
+    pointToMove.y = pointToMove.y * k;
+    pointToMove.z = pointToMove.z * k;
     return OK;
 }
 
@@ -105,6 +105,10 @@ myErrors pointCoordinateAddition(myPoint& result, myPoint& additivePoint)
 
 myErrors pointTransfer(myPoint& dest, myPoint& source)
 {
+    if (!source.isInited)
+    {
+        return POINTNOTINITED;
+    }
     dest.x = source.x;
     dest.y = source.y;
     dest.z = source.z;
@@ -200,6 +204,18 @@ myErrors masOfPointsTransfer(myMasOfPoints& dest, myMasOfPoints& source)
         dest.isInited = source.isInited;
     }
     return error;
+}
+
+myErrors calculatePointOffset(myPoint& pointCalculating, myPoint pointRegarding)
+{
+    if (!pointCalculating.isInited || !pointRegarding.isInited)
+    {
+        return POINTNOTINITED;
+    }
+    pointCalculating.x -= pointRegarding.x;
+    pointCalculating.y -= pointRegarding.y;
+    pointCalculating.z -= pointRegarding.z;
+    return OK;
 }
 
 int getNumOfPoints(myMasOfPoints& mas)

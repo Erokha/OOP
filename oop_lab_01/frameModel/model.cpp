@@ -10,21 +10,25 @@ myErrors modelInitFromFile(myModel& model, fileData& fdat)
 
     myModel tmp = modelBasicInit();
     myErrors error = modelReadAllPointsFromFile(tmp.points, f);
-    if (error == OK)
+    if (error != OK)
     {
-        error = modelReadAllEdgesFromFile(tmp.edges, getNumOfPoints(tmp.points), f);
+        modelFreeMemory(tmp);
+        return ERRORWHILEREADINPOINTS;
+    }
+    error = modelReadAllEdgesFromFile(tmp.edges, getNumOfPoints(tmp.points), f);
+    if (error != OK)
+    {
+        modelFreeMemory(tmp);
+        return ERRORWHILEREADINGEDGES;
     }
     fclose(f);
-    if (error == OK)
-    {
-        modelGetCenter(tmp.center, tmp.points);
-        modelCalculateOffset(tmp.points, tmp.center);
 
-        modelFreeMemory(model);
-        modelCheckInit(tmp);
-        modelTransfer(model, tmp);
 
-    }
+    modelGetCenter(tmp.center, tmp.points);
+    modelCalculateOffset(tmp.points, tmp.center);
+    modelFreeMemory(model);
+    modelCheckInit(tmp);
+    modelTransfer(model, tmp);
     modelFreeMemory(tmp);
     return error;
 }
@@ -33,7 +37,8 @@ myErrors modelInitFromFile(myModel& model, fileData& fdat)
 myErrors modelReadAllPointsFromFile(myMasOfPoints& points, FILE *f)
 {
     int n;
-    if (f == NULL) {
+    if (f == NULL)
+    {
         return NOFILE;
     }
     myErrors error = readNumber(n, f);
@@ -44,7 +49,6 @@ myErrors modelReadAllPointsFromFile(myMasOfPoints& points, FILE *f)
     error = allocateMasOfPoints(points, n);
     if (error != OK)
     {
-        masOfPointsFreeMemory(points);
         return error;
     }
     error = readNPoints(points, n, f);
@@ -58,7 +62,8 @@ myErrors modelReadAllPointsFromFile(myMasOfPoints& points, FILE *f)
 
 myErrors modelReadAllEdgesFromFile(matrix& edges, int numOfPoints, FILE* f)
 {
-    if (f == NULL) {
+    if (f == NULL)
+    {
         return NOFILE;
     }
     int n;
@@ -126,10 +131,7 @@ myErrors modelCalculateOffset(myMasOfPoints& mas, myPoint center)
     myErrors error = OK;
     for(int i = 0; (i < mas.numOfPoints && error == OK); i++)
     {
-        double newx = getPointX(mas.masOfPoints[i]) - getPointX(center);
-        double newy = getPointY(mas.masOfPoints[i]) - getPointY(center);
-        double newz = getPointZ(mas.masOfPoints[i]) - getPointZ(center);
-        error = initPoint(mas.masOfPoints[i], newx, newy, newz);
+        error = calculatePointOffset(mas.masOfPoints[i], center);
     }
     return error;
 }

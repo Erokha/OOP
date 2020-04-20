@@ -8,11 +8,11 @@
 
 myErrors modelRotateByAxis(myModel& model, rotationData& rot);
 
-myErrors modelRotateByX(myModel &m, myPoint &pointRegarding, double rotationAngle);
+myErrors modelRotateByX(myMasOfPoints& points, double rotationAngle);
 
-myErrors modelRotateByY(myModel &m, myPoint &pointRegarding, double rotationAngle);
+myErrors modelRotateByY(myMasOfPoints& points, double rotationAngle);
 
-myErrors modelRotateByZ(myModel &m, myPoint &pointRegarding, double rotationAngle);
+myErrors modelRotateByZ(myMasOfPoints& points, double rotationAngle);
 
 double toRadians(double angle);
 
