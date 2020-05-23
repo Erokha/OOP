@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="oop_lab_01"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="oop_lab_01">
+				<Option output="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/oop_lab_01" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 oop_lab_01"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="oop_lab_01/fast">
+				<Option output="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/oop_lab_01" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/System/Library/Frameworks"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 oop_lab_01/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/oop_lab_01/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/defines.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/drawing/colorsDefine.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/drawing/drawing.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/frameStructure.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/model.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/modelRotation.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/frameModel/zoom.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/glutDefines.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/glutWindow/myGLUT.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/main.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/manager/myManager.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/matrix/matrix.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/point/point.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/point/point.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/request/request.cpp">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/request/request.h">
+			<Option target="oop_lab_01"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/oop_lab_01/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>
