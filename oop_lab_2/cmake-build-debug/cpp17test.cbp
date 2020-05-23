@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="cpp17test"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpp17test">
+				<Option output="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/cpp17test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp17test"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="cpp17test/fast">
+				<Option output="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/cpp17test" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/x86_64-apple-darwin19"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/../../../../../../include/c++/9.3.0/backward"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include"/>
+					<Add directory="/usr/local/Cellar/gcc/9.3.0_1/lib/gcc/9/gcc/x86_64-apple-darwin19/9.3.0/include-fixed"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/System/Library/Frameworks"/>
+					<Add directory="/usr/local/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/lib/clang/11.0.0/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"/>
+					<Add directory="/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 cpp17test/fast"/>
+					<CompileFile command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j8 -f &quot;/Users/kymblc/CLionProjects/cpp17test/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/Array.h">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/BaseMatrix.h">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/Iterator.h">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/Matrix.h">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/constIterator.h">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/errors.h">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/constIteratorImp.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/iteratorImp.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixConstructors.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixEquals.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixGettersAndSetters.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixInOutOperators.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixMath.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixMultiplyDivision.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixPlusMinus.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/implement/matrixPrivate.hpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/main.cpp">
+			<Option target="cpp17test"/>
+		</Unit>
+		<Unit filename="/Users/kymblc/CLionProjects/cpp17test/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

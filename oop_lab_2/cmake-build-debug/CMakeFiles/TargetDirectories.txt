@@ -1,0 +1,3 @@
+/Users/kymblc/CLionProjects/oop_lab_2/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/kymblc/CLionProjects/oop_lab_2/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/kymblc/CLionProjects/oop_lab_2/cmake-build-debug/CMakeFiles/OOP_lab_2.dir
