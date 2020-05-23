@@ -30,3 +30,6 @@
 *.exe
 *.out
 *.app
+
+# Hello, Mr.Panafidin
+.DS_Store
