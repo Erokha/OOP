@@ -4,37 +4,35 @@
 #include <QObject>
 #include "constants.h"
 #include <QTimer>
+#include "enums.h"
 
 class Door : public QObject {
     Q_OBJECT
-    enum StateOfDoor {
-        OPENING,
-        OPENED,
-        CLOSING,
-        CLOSED
-    };
+
 public:
     explicit Door(QObject *parent = nullptr);
     ~Door() = default;
 
 signals:
     void info(QString message);
-
-    void doorsClosed();
+    void errorClosing();
+    void errorOpening();
+    void doorsClosed(selectStatus);
+    void doorsOpened();
 
 public slots:
     void opening();
+    void closing();
 
 private slots:
     void opened();
-    void closing();
     void closed();
 
 private:
     QTimer timeToOpen;
     QTimer timeToClose;
     QTimer timeToWait;
-    StateOfDoor state;
+    doorStatus state;
 };
 
 #endif // DOOR_H

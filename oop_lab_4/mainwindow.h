@@ -7,7 +7,7 @@
 #include <QMainWindow>
 #include "ui_mainwindow.h"
 #include "constants.h"
-#include "lift.h"
+#include "elevator.h"
 
 namespace Ui { class MainWindow; }
 
@@ -24,7 +24,7 @@ private:
     Ui::MainWindow *ui;
     QVBoxLayout *layout;
 
-    Controller *controller;
+    Elevator* elevator;
 };
 
 #endif // MAINWINDOW_H

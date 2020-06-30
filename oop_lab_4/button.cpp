@@ -1,24 +1,90 @@
 #include "button.h"
 
 
-Button::Button(QWidget *parent) : QPushButton(parent) {
-    state = RELEASED;
-    floor = 0;
-    connect(this, &Button::clicked, this, &Button::pressed);
-    connect(this, &Button::reset, this, &Button::released);
+BaseButton::BaseButton(QWidget *widjet): QPushButton(widjet) {
+
 }
 
 
-void Button::setFloorNum(std::size_t nfloor)
-{
-    floor = nfloor;
+BaseButton::~BaseButton() {
+
 }
 
-void Button::pressed()
+DoorsOpeneningButton::DoorsOpeneningButton(QWidget *widget): BaseButton(widget) {
+    status = RELEASED;
+    connect(this, SIGNAL(clicked()), SLOT(pressed()));
+    connect(this, SIGNAL(reset()), SLOT(released()));
+}
+
+
+void DoorsOpeneningButton::pressed()
 {
-    if (state == RELEASED)
+    if (status == RELEASED)
     {
-        state = PRESSED;
+        status = PRESSED;
+        setEnabled(false);
+
+        emit callOpenDoors(OPENDOORS);
+    }
+}
+
+void DoorsOpeneningButton::released()
+{
+    if (status == PRESSED)
+    {
+        status = RELEASED;
+        setEnabled(true);
+    }
+}
+
+DoorsClosingButton::DoorsClosingButton(QWidget *widget): BaseButton(widget) {
+    status = RELEASED;
+    connect(this, SIGNAL(clicked()), SLOT(pressed()));
+    connect(this, SIGNAL(reset()), SLOT(released()));
+}
+
+void DoorsClosingButton::released()
+{
+    if (status == PRESSED)
+    {
+        status = RELEASED;
+        setEnabled(true);
+    }
+}
+
+void DoorsClosingButton::pressed()
+{
+    if (status == RELEASED)
+    {
+        status = PRESSED;
+        setEnabled(false);
+
+        emit callCloseDoors(CLOSEDOORS);
+    }
+}
+
+FloorButton::FloorButton(QWidget *parent) :BaseButton(parent) {
+    status = RELEASED;
+    floor = 0;
+    connect(this, &FloorButton::clicked,
+            this, &FloorButton::pressed);
+
+    connect(this, &FloorButton::reset,
+            this, &FloorButton::released);
+}
+
+
+void FloorButton::setFloorNum(std::size_t floor_num)
+{
+    floor = floor_num;
+}
+
+void FloorButton::pressed()
+{
+    if (status == RELEASED)
+    {
+        setStyleSheet("border: 1px solid red;");
+        status = PRESSED;
         setEnabled(false);
 
         emit requestFloor(floor);
@@ -26,12 +92,12 @@ void Button::pressed()
 }
 
 
-void Button::released()
+void FloorButton::released()
 {
-    if (state == PRESSED)
+    if (status == PRESSED)
     {
-        state = RELEASED;
+        setStyleSheet("border 1px solid grey");
+        status = RELEASED;
         setEnabled(true);
-
     }
 }

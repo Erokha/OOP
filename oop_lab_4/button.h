@@ -3,22 +3,56 @@
 
 #include <QPushButton>
 #include <iostream>
+#include "constants.h"
+#include "enums.h"
 
-class Button: public QPushButton
+class BaseButton: public QPushButton
 {
     Q_OBJECT
-    enum StateOfButtom
-    {
-        PRESSED,
-        RELEASED
-    };
 
 public:
-    explicit Button(QWidget *widjet = nullptr);
-    ~Button() = default;
+    virtual ~BaseButton() = 0;
+    explicit BaseButton(QWidget *widget = nullptr);
+
+protected:
+    buttonStatus status;
+};
+
+class DoorsOpeneningButton: public BaseButton
+{
+   Q_OBJECT
+public:
+    explicit DoorsOpeneningButton(QWidget *widget = nullptr);
+signals:
+    void reset();
+    void callOpenDoors(selectStatus);
+private slots:
+    void pressed();
+    void released();
+};
+
+class DoorsClosingButton: public BaseButton
+{
+    Q_OBJECT
+ public:
+     explicit DoorsClosingButton(QWidget *widget = nullptr);
+ signals:
+     void reset();
+     void callCloseDoors(selectStatus);
+ private slots:
+     void pressed();
+     void released();
+};
+
+
+class FloorButton: public BaseButton
+{
+    Q_OBJECT
+
+public:
+    explicit FloorButton(QWidget *widget = nullptr);
 
     void setFloorNum(std::size_t floor);
-
 
 signals:
     void reset();
@@ -29,7 +63,7 @@ private slots:
     void released();
 
 private:
-    StateOfButtom state;
+
     std::size_t floor;
 };
 

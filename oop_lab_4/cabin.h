@@ -6,43 +6,42 @@
 #include "constants.h"
 #include <QTimer>
 #include "door.h"
+#include "enums.h"
 
 class Cabin: public QObject
 {
     Q_OBJECT
 
-    enum StateOfCabin
-    {
-        MOVING,
-        WAITING,
-        STAY,
-        STARTMOVING,
-    };
+
 public:
     explicit Cabin(QObject *parent = nullptr);
     ~Cabin() = default;
 
 signals:
-    void info(QString msg);
-    void update(int floor, Direction direct, bool is_reached = false);
+    void logUpdate(QString msg);
+    void update(int floor, bool isReached = false);
     void floorReached();
     void move();
     void open();
+    void close();
+    void errorOpening();
+    void errorClosing();
+    void unableToReach(size_t floor);
 
 public slots:
-    void showInfo(QString msg);
-    void starting(int target);
+    void starting(int target, directionStatus dir);
+    void staying(selectStatus st);
 private slots:
     void moving();
-    void waiting();
     void stopLift();
 private:
     int currentFloor = 0;
     int target = 0;
-    StateOfCabin state = WAITING;
+    int step;
+    cabinStatus state = WAITING;
     Door door;
     QTimer movingTime;
-    Direction direction = up;
+    directionStatus direction = UP;
 };
 
 #endif // CABIN_H

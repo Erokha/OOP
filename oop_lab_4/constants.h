@@ -4,37 +4,38 @@
 #include <iostream>
 #include <QFont>
 #include <QString>
+#include "enums.h"
 
-enum Direction
+
+enum selectStatus
 {
-    down,
-    up,
-    staying,
-    stop,
+    OPENDOORS,
+    CLOSEDOORS,
+    WAITINGCOMMAND
 };
 
-
-//const QString CABINSHEADER = "Button";
-const std::size_t MAXFLOORS = 16;
-const int FONTSIZE = 16;
-const QString FONTNAME = "Times New Roman";
-const QFont FONT { FONTNAME, FONTSIZE };
-
-const int WIDTH = 100;
-const int HEIGHT = 30;
+const int BUTTONWIDTH = 100;
+const int BUTTONHEIGHT = 50;
 
 const int WIDTHINFO = 150;
 const int HEIGHTINFO = 400;
 
-const int MOVINGTIME = 1500;
-const int DOORTIME = 1500;
+const int MOVINGTIME = 700;
+const int DOORTIME = 700;
+const int WAITINGTIME = 700;
 
-const QString STAYONFLOOR = "We are staying on the floor:";
-const QString THROUGHFLOOR = "We are going through:";
-const QString DOORSOPENINGMSG = "Attention! Doors are opening!";
-const QString DOORSOPENEDMSG = "Doors are opened!";
-const QString DOORSCLOSINGMSG = "Attention! Doors are closing!";
-const QString DOORSCLOSEDMSG = "Doors are closed";
+const QString ARIIVEDMSG = "Arrived at floor: ";
+const QString PASSIGBYMSG = "Passing floor: ";
+const QString DOORSOPENINGMSG = "Openning doors";
+const QString DOORSOPENEDMSG = "Doors opened";
+const QString DOORSCLOSINGMSG = "Closing doors";
+const QString DOORSCLOSEDMSG = "Doors closed";
+
+const std::size_t MAXFLOORS = 12;
+const int FONTSIZE = 14;
+const QString FONTNAME = "Times New Roman";
+const QFont FONT { FONTNAME, FONTSIZE };
+
 
 
 
